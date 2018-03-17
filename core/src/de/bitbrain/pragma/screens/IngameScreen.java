@@ -21,7 +21,7 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
     @Override
     protected void onCreate(GameContext context) {
         setBackgroundColor(Colors.BACKGROUND);
-        context.getScreenTransitions().in(1.5f);
+        context.getScreenTransitions().in(5.5f);
 
         Vignette vignette = new Vignette(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
         vignette.setLutIntensity(0.5f);
