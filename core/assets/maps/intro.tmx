@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="17">
+ <tileset firstgid="1" source="forest.tsx"/>
+ <layer name="Tile Layer 1" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzFo3gUDxgGAJDXAOI=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDCQAAAOEAAE=
+  </data>
+ </layer>
+ <objectgroup name="spawn">
+  <object id="8" name="John" type="JOHN" x="263.5" y="173.5" width="32" height="32"/>
+  <object id="10" name="Light" type="tree_light" x="111.5" y="282">
+   <point/>
+  </object>
+  <object id="13" name="Light" type="tree_light" x="304" y="282">
+   <point/>
+  </object>
+  <object id="14" name="Light" type="tree_light" x="207.5" y="217">
+   <point/>
+  </object>
+ </objectgroup>
+ <layer name="Tile Layer 3" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDCQAAAOEAAE=
+  </data>
+ </layer>
+</map>
