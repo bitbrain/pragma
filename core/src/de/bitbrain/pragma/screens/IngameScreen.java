@@ -21,6 +21,7 @@ import de.bitbrain.braingdx.graphics.renderer.SpriteRenderer;
 import de.bitbrain.braingdx.input.OrientationMovementController;
 import de.bitbrain.braingdx.postprocessing.effects.Bloom;
 import de.bitbrain.braingdx.postprocessing.effects.Vignette;
+import de.bitbrain.braingdx.postprocessing.filters.Blur;
 import de.bitbrain.braingdx.screens.AbstractScreen;
 import de.bitbrain.braingdx.tmx.TiledMapConfig;
 import de.bitbrain.braingdx.tmx.TiledMapType;
@@ -56,7 +57,6 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         vignette.setLutIntensity(0.7f);
         vignette.setIntensity(0.7f);
         vignette.setSaturationMul(1.1f);
-
         context.getRenderPipeline().getPipe(RenderPipeIds.WORLD).addEffects(vignette);
 
         for (GameObject o : context.getGameWorld()) {

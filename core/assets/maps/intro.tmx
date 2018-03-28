@@ -4,17 +4,25 @@
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="Tile Layer 1" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYBzFo3gUDxgGAJDXAOI=
+   eJydUVsKwDAIkw57/yNvhQkhS0rdR7D1GeOMiPliPEj4l6/8HOOcQvlzE+O4y1eoXOSMQM5od5xHfHXgfk4P7pNiDr8dB+bJu6pZaJUeShPm5Oae3EPd1Wnt+qKeVwO8W7cW6zu1rOVfzmvfG+VvAyw=
   </data>
  </layer>
  <layer name="Tile Layer 2" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDCQAAAOEAAE=
+   eJxjYBgFo4D+gAWKcQEOAjQ+wEOAZidSLzcWvfiAAAEaFwAAbXwA2w==
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4D+gBeIuXDIcRLAjEDMj0c/MYBvEOkFAHy0AKQ=
   </data>
  </layer>
  <objectgroup name="spawn">
   <object id="8" name="John" type="JOHN" x="263.5" y="173.5" width="32" height="32"/>
   <object id="10" name="Light" type="tree_light" x="111.5" y="282">
+   <properties>
+    <property name="color" type="color" value="#ffff08f3"/>
+   </properties>
    <point/>
   </object>
   <object id="13" name="Light" type="tree_light" x="304" y="282">
@@ -24,9 +32,4 @@
    <point/>
   </object>
  </objectgroup>
- <layer name="Tile Layer 3" width="15" height="15">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDCQAAAOEAAE=
-  </data>
- </layer>
 </map>
