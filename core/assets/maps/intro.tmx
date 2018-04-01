@@ -4,17 +4,17 @@
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="Tile Layer 1" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJydUVsKwDAIkw57/yNvhQkhS0rdR7D1GeOMiPliPEj4l6/8HOOcQvlzE+O4y1eoXOSMQM5od5xHfHXgfk4P7pNiDr8dB+bJu6pZaJUeShPm5Oae3EPd1Wnt+qKeVwO8W7cW6zu1rOVfzmvfG+VvAyw=
+   eJydUVsKwDAIk+7D3v/EW2FCyJJS9xFsfcY4I2K+GA8S/uUrP8c4p1D+3MQ47vIVKhc5I5Az2h3nEV8duJ/Tg/ukmMNvx4F58q5qFlqlh9KEObm5J/dQd3Vau76o59UA79atxfpOLWv5l/Pa9wZj7QPe
   </data>
  </layer>
  <layer name="Tile Layer 2" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4D+gAWKcQEOAjQ+wEOAZidSLzcWvfiAAAEaFwAAbXwA2w==
+   eJxjYBgFo4D+gAWKcQEuAjQ+IECA5iRSLz8WvfiAGAEaFwAAjBwBIQ==
   </data>
  </layer>
  <layer name="Tile Layer 3" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4D+gBeIuXDIcRLAjEDMj0c/MYBvEOkFAHy0AKQ=
+   eJxjYBgFQwUIArEQnc2htlqYGmEg5sOhhpcAZgRiUTz6iQEiFOolNy6w2QsAse8BvA==
   </data>
  </layer>
  <objectgroup name="spawn">
@@ -32,4 +32,9 @@
    <point/>
   </object>
  </objectgroup>
+ <layer name="Tile Layer 4" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFpAJWIGYjUy83EPOQYQ66WmRzyFGLy2585pKihl6AWnExkAAAPHMAzQ==
+  </data>
+ </layer>
 </map>

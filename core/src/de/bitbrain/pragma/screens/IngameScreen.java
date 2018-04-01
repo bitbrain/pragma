@@ -64,7 +64,7 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
                 player = o;
             }
             if (o.getType().equals("tree_light")) {
-                context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
+                context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, Color.RED);
             }
         }
         context.getGameCamera().setTarget(player);
