@@ -14,6 +14,7 @@ import de.bitbrain.braingdx.BrainGdxGame;
 import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
+import de.bitbrain.braingdx.event.GameEventListener;
 import de.bitbrain.braingdx.graphics.animation.SpriteSheet;
 import de.bitbrain.braingdx.graphics.lighting.PointLightBehavior;
 import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
@@ -29,7 +30,10 @@ import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Colors;
 import de.bitbrain.pragma.core.CharacterType;
+import de.bitbrain.pragma.core.EventHandler;
+import de.bitbrain.pragma.core.say.SayEvent;
 import de.bitbrain.pragma.graphics.CharacterInitializer;
+import de.bitbrain.pragma.ui.SpeechHandler;
 
 
 public class IngameScreen extends AbstractScreen<BrainGdxGame> {
@@ -64,11 +68,14 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
                 player = o;
             }
             if (o.getType().equals("tree_light")) {
-                context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, Color.RED);
+                context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
+            }
+            if (o.getType().equals("event")) {
+               // o.setActive(false);
             }
         }
         context.getGameCamera().setTarget(player);
-        context.getGameCamera().setBaseZoom(0.17f);
+        context.getGameCamera().setBaseZoom(340f / Gdx.graphics.getWidth());
         context.getGameCamera().setZoomScale(0.0001f);
         context.getGameCamera().setSpeed(0.7f);
 
@@ -81,5 +88,18 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         context.getLightingManager().setAmbientLight(Color.valueOf("#221166"));
         context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#444444"), 300f, context.getLightingManager()), player);
 
+
+        // CORE components
+        EventHandler eventHandler = new EventHandler(context.getEventManager());
+        context.getBehaviorManager().apply(eventHandler);
+
+        context.getEventManager().register(new SpeechHandler(context.getStage()), SayEvent.class);
+    }
+
+    @Override
+    protected void onUpdate(float delta) {
+        if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
+            Gdx.app.exit();
+        }
     }
 }

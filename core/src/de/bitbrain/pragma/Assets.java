@@ -9,4 +9,8 @@ public interface Assets {
     interface Textures {
         String PLAYER_TILESET = "textures/player.png";
     }
+
+    interface Fonts {
+        String TEXT = "fonts/Pixellari.ttf";
+    }
 }

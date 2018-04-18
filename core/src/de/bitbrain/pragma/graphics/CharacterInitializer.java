@@ -19,7 +19,7 @@ public class CharacterInitializer {
         Map<Integer, SpriteSheetAnimationFactory.Index> indices = createSpriteIndices();
         SpriteSheetAnimationFactory animationFactory = new SpriteSheetAnimationFactory(sheet, indices);
         for (int type : indices.keySet()) {
-            SpriteSheetAnimation animation = animationFactory.create(type).base(0);
+            SpriteSheetAnimation animation = animationFactory.create(type).base(0).interval(0.2f);
             SpriteSheetAnimationSupplier supplier = new SpriteSheetAnimationSupplier(orientations(), animation,
                     AnimationTypes.FORWARD_YOYO);
             context.getBehaviorManager().apply(supplier);

@@ -1,43 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="20">
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="31">
  <tileset firstgid="1" source="forest.tsx"/>
- <layer name="Tile Layer 1" width="15" height="15">
+ <layer name="ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
    eJydUVsKwDAIk+7D3v/EW2FCyJJS9xFsfcY4I2K+GA8S/uUrP8c4p1D+3MQ47vIVKhc5I5Az2h3nEV8duJ/Tg/ukmMNvx4F58q5qFlqlh9KEObm5J/dQd3Vau76o59UA79atxfpOLWv5l/Pa9wZj7QPe
   </data>
  </layer>
- <layer name="Tile Layer 2" width="15" height="15">
+ <layer name="base1" width="15" height="15">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo4D+gAWKcQEuAjQ+IECA5iRSLz8WvfiAGAEaFwAAjBwBIQ==
   </data>
  </layer>
- <layer name="Tile Layer 3" width="15" height="15">
+ <layer name="base2" width="15" height="15">
   <data encoding="base64" compression="zlib">
    eJxjYBgYIAjEQlRQhy5PrLnEAlqbT8g+YuUGwhxy1MLUCAMxHw41vAQwIxCL4tFPDBChUC+56QDZXpgZAGPsAvc=
   </data>
  </layer>
  <objectgroup name="spawn">
   <object id="8" name="John" type="JOHN" x="128.833" y="385.5" width="32" height="32"/>
-  <object id="10" name="Light" type="tree_light" x="111.5" y="282">
-   <properties>
-    <property name="color" type="color" value="#ffff08f3"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="13" name="Light" type="tree_light" x="304" y="282">
-   <point/>
-  </object>
-  <object id="14" name="Light" type="tree_light" x="207.5" y="217">
-   <point/>
-  </object>
   <object id="18" type="event" x="-2.66667" y="0.666667" width="482" height="31.3333">
    <properties>
     <property name="event" value="teleport:map2"/>
    </properties>
   </object>
  </objectgroup>
- <layer name="Tile Layer 4" width="15" height="15">
+ <objectgroup name="lights">
+  <object id="22" name="Light" type="tree_light" x="254.833" y="326.333">
+   <properties>
+    <property name="color" type="color" value="#ff00e0f4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="23" name="Light" type="tree_light" x="419.167" y="187">
+   <properties>
+    <property name="color" type="color" value="#ffff08f3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="24" name="Light" type="tree_light" x="8.16667" y="461.333">
+   <properties>
+    <property name="color" type="color" value="#ff8ffd00"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup name="events">
+  <object id="25" type="event" x="254" y="224" width="65.5" height="32">
+   <properties>
+    <property name="producer" value="JOHN"/>
+    <property name="say" value="This forest looks really creepy..."/>
+   </properties>
+  </object>
+  <object id="30" type="event" x="4.25" y="354.5" width="86" height="111">
+   <properties>
+    <property name="producer" value="JOHN"/>
+    <property name="say" value="I really want to explore the forest first"/>
+    <property name="sticky" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="overlay1" width="15" height="15">
   <data encoding="base64" compression="zlib">
    eJxjZWBgYGMgDFixqOMGYh4c8sh8ZHXYALo8NvX4zCcEiDEfHeAzn5Dd+MIFnxy55hByHzHhSYy5pKihFyAlHaADmD+oYQYlAAA5lAH/
   </data>
