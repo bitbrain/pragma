@@ -3,7 +3,6 @@ package de.bitbrain.pragma.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
@@ -14,31 +13,30 @@ import de.bitbrain.braingdx.BrainGdxGame;
 import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
-import de.bitbrain.braingdx.event.GameEventListener;
+import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.graphics.animation.SpriteSheet;
 import de.bitbrain.braingdx.graphics.lighting.PointLightBehavior;
 import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
-import de.bitbrain.braingdx.graphics.renderer.SpriteRenderer;
 import de.bitbrain.braingdx.input.OrientationMovementController;
-import de.bitbrain.braingdx.postprocessing.effects.Bloom;
 import de.bitbrain.braingdx.postprocessing.effects.Vignette;
-import de.bitbrain.braingdx.postprocessing.filters.Blur;
 import de.bitbrain.braingdx.screens.AbstractScreen;
-import de.bitbrain.braingdx.tmx.TiledMapConfig;
 import de.bitbrain.braingdx.tmx.TiledMapType;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Colors;
 import de.bitbrain.pragma.core.CharacterType;
 import de.bitbrain.pragma.core.EventHandler;
-import de.bitbrain.pragma.core.say.SayEvent;
+import de.bitbrain.pragma.core.LevelLoader;
+import de.bitbrain.pragma.core.Teleporter;
+import de.bitbrain.pragma.events.SayEvent;
+import de.bitbrain.pragma.events.TeleportEvent;
 import de.bitbrain.pragma.graphics.CharacterInitializer;
 import de.bitbrain.pragma.ui.SpeechHandler;
 
 
 public class IngameScreen extends AbstractScreen<BrainGdxGame> {
 
-    private GameObject player;
+    private LevelLoader loader;
 
     public IngameScreen(BrainGdxGame game) {
         super(game);
@@ -46,6 +44,7 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
 
     @Override
     protected void onCreate(GameContext context) {
+        loader = new LevelLoader(context);
         setBackgroundColor(Colors.BACKGROUND);
         context.getScreenTransitions().in(5.5f);
         SharedAssetManager.getInstance().load(Assets.TiledMaps.INTRO, TiledMap.class);
@@ -63,37 +62,14 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         vignette.setSaturationMul(1.1f);
         context.getRenderPipeline().getPipe(RenderPipeIds.WORLD).addEffects(vignette);
 
-        for (GameObject o : context.getGameWorld()) {
-            if (o.getType().equals(CharacterType.JOHN.name())) {
-                player = o;
-            }
-            if (o.getType().equals("tree_light")) {
-                context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
-            }
-            if (o.getType().equals("event")) {
-               // o.setActive(false);
-            }
-        }
-        context.getGameCamera().setTarget(player);
-        context.getGameCamera().setBaseZoom(340f / Gdx.graphics.getWidth());
-        context.getGameCamera().setZoomScale(0.0001f);
-        context.getGameCamera().setSpeed(0.7f);
-
-        OrientationMovementController controller = new OrientationMovementController();
-        RasteredMovementBehavior behavior = new RasteredMovementBehavior(controller, context.getTiledMapManager().getAPI())
-                .interval(0.8f)
-                .rasterSize(context.getTiledMapManager().getAPI().getCellWidth(), context.getTiledMapManager().getAPI().getCellHeight());
-        context.getBehaviorManager().apply(behavior, player);
-
         context.getLightingManager().setAmbientLight(Color.valueOf("#221166"));
-        context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#444444"), 300f, context.getLightingManager()), player);
 
 
         // CORE components
-        EventHandler eventHandler = new EventHandler(context.getEventManager());
-        context.getBehaviorManager().apply(eventHandler);
-
         context.getEventManager().register(new SpeechHandler(context.getStage()), SayEvent.class);
+        new Teleporter(loader, context.getGameWorld(), context.getEventManager());
+        loader.load(Assets.TiledMaps.INTRO);
+        loader.update();
     }
 
     @Override
@@ -101,5 +77,6 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
         }
+        loader.update();
     }
 }

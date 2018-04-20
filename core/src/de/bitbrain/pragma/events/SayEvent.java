@@ -1,4 +1,4 @@
-package de.bitbrain.pragma.core.say;
+package de.bitbrain.pragma.events;
 
 import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.world.GameObject;

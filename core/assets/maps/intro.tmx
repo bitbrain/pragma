@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="31">
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="37">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
@@ -21,8 +21,14 @@
   <object id="8" name="John" type="JOHN" x="128.833" y="385.5" width="32" height="32"/>
   <object id="18" type="event" x="-2.66667" y="0.666667" width="482" height="31.3333">
    <properties>
-    <property name="event" value="teleport:map2"/>
+    <property name="teleport" value="@level=pathway;bottom"/>
    </properties>
+  </object>
+  <object id="35" type="door" x="305.25" y="65">
+   <properties>
+    <property name="id" value="default"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup name="lights">
