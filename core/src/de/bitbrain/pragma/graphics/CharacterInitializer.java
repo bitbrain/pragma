@@ -5,6 +5,7 @@ import java.util.Map;
 
 import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.behavior.movement.Orientation;
+import de.bitbrain.braingdx.graphics.animation.AnimationType;
 import de.bitbrain.braingdx.graphics.animation.SpriteSheet;
 import de.bitbrain.braingdx.graphics.animation.SpriteSheetAnimation;
 import de.bitbrain.braingdx.graphics.animation.SpriteSheetAnimationFactory;
@@ -19,9 +20,16 @@ public class CharacterInitializer {
         Map<Integer, SpriteSheetAnimationFactory.Index> indices = createSpriteIndices();
         SpriteSheetAnimationFactory animationFactory = new SpriteSheetAnimationFactory(sheet, indices);
         for (int type : indices.keySet()) {
-            SpriteSheetAnimation animation = animationFactory.create(type).base(0).interval(0.2f);
+            SpriteSheetAnimation animation = animationFactory
+                    .create(type)
+                    .base(0)
+                    .interval(0.1f)
+                    .direction(SpriteSheetAnimation.Direction.HORIZONTAL)
+                    .frames(4)
+                    .origin(0, 0)
+                    .source(sheet);
             SpriteSheetAnimationSupplier supplier = new SpriteSheetAnimationSupplier(orientations(), animation,
-                    AnimationTypes.FORWARD_YOYO);
+                    AnimationTypes.FORWARD);
             context.getBehaviorManager().apply(supplier);
             context.getRenderManager().register(CharacterType.values()[type].name(), new AnimationRenderer(supplier));
         }

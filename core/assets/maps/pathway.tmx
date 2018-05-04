@@ -24,7 +24,7 @@
    </properties>
   </object>
   <object id="5" name="John" type="JOHN" x="128.333" y="545.25" width="30.3333" height="30"/>
-  <object id="6" type="door" x="110.75" y="600.416">
+  <object id="6" type="door" x="141.75" y="604.416">
    <properties>
     <property name="id" value="bottom"/>
    </properties>

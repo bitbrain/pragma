@@ -5,31 +5,20 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.math.Vector2;
-
-import java.util.UUID;
 
 import de.bitbrain.braingdx.BrainGdxGame;
 import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
-import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
-import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.graphics.animation.SpriteSheet;
-import de.bitbrain.braingdx.graphics.lighting.PointLightBehavior;
 import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
-import de.bitbrain.braingdx.input.OrientationMovementController;
 import de.bitbrain.braingdx.postprocessing.effects.Vignette;
 import de.bitbrain.braingdx.screens.AbstractScreen;
 import de.bitbrain.braingdx.tmx.TiledMapType;
-import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Colors;
-import de.bitbrain.pragma.core.CharacterType;
-import de.bitbrain.pragma.core.EventHandler;
 import de.bitbrain.pragma.core.LevelLoader;
 import de.bitbrain.pragma.core.Teleporter;
 import de.bitbrain.pragma.events.SayEvent;
-import de.bitbrain.pragma.events.TeleportEvent;
 import de.bitbrain.pragma.graphics.CharacterInitializer;
 import de.bitbrain.pragma.ui.SpeechHandler;
 
@@ -46,7 +35,7 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
     protected void onCreate(GameContext context) {
         loader = new LevelLoader(context);
         setBackgroundColor(Colors.BACKGROUND);
-        context.getScreenTransitions().in(5.5f);
+        context.getScreenTransitions().in(3.5f);
         SharedAssetManager.getInstance().load(Assets.TiledMaps.INTRO, TiledMap.class);
         SharedAssetManager.getInstance().finishLoading();
         TiledMap map = SharedAssetManager.getInstance().get(Assets.TiledMaps.INTRO, TiledMap.class);

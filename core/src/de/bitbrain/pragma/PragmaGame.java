@@ -7,6 +7,7 @@ import de.bitbrain.braingdx.assets.GameAssetLoader;
 import de.bitbrain.braingdx.assets.SmartAssetLoader;
 import de.bitbrain.braingdx.screens.AbstractScreen;
 import de.bitbrain.pragma.screens.IngameScreen;
+import de.bitbrain.pragma.screens.MenuScreen;
 import de.bitbrain.pragma.ui.Styles;
 
 public class PragmaGame extends BrainGdxGame {

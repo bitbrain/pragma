@@ -7,5 +7,5 @@ import com.badlogic.gdx.graphics.Color;
  */
 
 public interface Colors {
-    Color BACKGROUND = Color.valueOf("8B7D74");
+    Color BACKGROUND = Color.valueOf("#0c090f");
 }
