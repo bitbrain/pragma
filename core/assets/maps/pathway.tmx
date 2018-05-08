@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="9" height="20" tilewidth="32" tileheight="32" infinite="0" nextobjectid="7">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="9" height="20" tilewidth="32" tileheight="32" infinite="0" nextobjectid="7">
  <tileset firstgid="1" source="forest.tsx"/>
- <layer name="base" width="9" height="20">
-  <data encoding="base64" compression="zlib">
-   eJyVUUEOwDAIIlz0/y/eDlvCKLXZgcQYAcUG0A/qBqWuUDvePoWrnLJ+0kszbbrOofm7F/Hdabcnse6SdE4zekfy0jw6cKd8aJj+kX6z0036f7ULa9YnXtKfPD3fiXcBXX4Elg==
-  </data>
- </layer>
- <layer name="moss" width="9" height="20" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFlAI+ItSIUEmNKBDzQjG1ADHuR7aXkYp2UxsAAKwsAKQ=
-  </data>
- </layer>
  <layer name="ground" width="9" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYKAdEARiISLEBhLQ0j209utgCcvBFIYAW58A9g==
+   eJyVkkkKwDAMA42uyv/fWwoumEFu6UEQL5G8uarcOA01HtttG2AO/fynhWfivGjNHNbM99RjDrlU/2pjT19+zpZ9KfCnGtOO+HfbI+dIDiFuxMiZbmDTTTlJPyHd48Zx2xeSKAWm
+  </data>
+ </layer>
+ <layer name="base" width="9" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAdkARiqQHQSymgtd1DNVxo7QZqmAsA8hMBZg==
   </data>
  </layer>
  <objectgroup name="events">
@@ -23,8 +18,8 @@
     <property name="teleport" value="@level=intro;default"/>
    </properties>
   </object>
-  <object id="5" name="John" type="JOHN" x="128.333" y="545.25" width="30.3333" height="30"/>
-  <object id="6" type="door" x="141.75" y="604.416">
+  <object id="5" name="John" type="JOHN" x="112.333" y="538.25" width="30.3333" height="30"/>
+  <object id="6" type="door" x="174.75" y="564.749">
    <properties>
     <property name="id" value="bottom"/>
    </properties>
@@ -36,7 +31,7 @@
  </objectgroup>
  <layer name="overlay" width="9" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYMAErEDMRkCMG4h50NRgE6MVwOZGdECue2hpNj3MHwzuGCg/AgB+AwDv
+   eJxjYMAErEDMhkUcGfADsQCV9VIKaG33UA0XWrthMPgNBgDOywEn
   </data>
  </layer>
 </map>

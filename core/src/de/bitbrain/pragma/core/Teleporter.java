@@ -6,6 +6,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.event.GameEventListener;
 import de.bitbrain.braingdx.event.GameEventManager;
+import de.bitbrain.braingdx.tmx.TiledMapAPI;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.braingdx.world.GameWorld;
 import de.bitbrain.pragma.events.LevelLoadEvent;
@@ -16,10 +17,12 @@ public class Teleporter {
     private final LevelLoader loader;
     private final GameWorld world;
     private TeleportEvent lastTeleportEvent;
+    private final TiledMapAPI api;
 
-    public Teleporter(LevelLoader loader, GameWorld world, GameEventManager eventManager) {
+    public Teleporter(LevelLoader loader, GameWorld world, GameEventManager eventManager, TiledMapAPI api) {
         this.loader = loader;
         this.world = world;
+        this.api = api;
         eventManager.register(teleportListener, TeleportEvent.class);
         eventManager.register(levelLoadListener, LevelLoadEvent.class);
     }
@@ -51,8 +54,11 @@ public class Teleporter {
         if (door != null) {
             GameObject player = getPlayer();
             if (player != null) {
-                Gdx.app.log("TELEPORT", "Moved player to " + door.getLeft() + "," + door.getTop());
-                player.setPosition(door.getLeft(), door.getTop());
+                float normalizedX = (float)Math.floor(door.getLeft() / api.getCellWidth()) * api.getCellWidth();
+                float normalizedY = (float)Math.floor(door.getTop() / api.getCellHeight()) * api.getCellHeight();
+                player.setPosition(normalizedX, normalizedY);
+
+                Gdx.app.log("TELEPORT", "Moved player to " + normalizedX + "," + normalizedY);
             }
         }
     }

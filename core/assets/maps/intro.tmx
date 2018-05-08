@@ -18,54 +18,57 @@
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="8" name="John" type="JOHN" x="63.833" y="447.5" width="32" height="32"/>
+  <object id="8" name="John" type="JOHN" x="63.833" y="447.5" width="32" height="32">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="18" type="event" x="-2.66667" y="0.666667" width="482" height="31.3333">
    <properties>
+    <property name="collision" type="bool" value="false"/>
     <property name="teleport" value="@level=pathway;bottom"/>
    </properties>
   </object>
   <object id="35" type="door" x="305.25" y="65">
    <properties>
+    <property name="collision" type="bool" value="false"/>
     <property name="id" value="default"/>
    </properties>
    <point/>
   </object>
  </objectgroup>
  <objectgroup name="lights">
-  <object id="22" name="Light" type="tree_light" x="254.833" y="326.333">
+  <object id="24" name="Light" type="tree_light" x="240.75" y="58.9997">
    <properties>
-    <property name="color" type="color" value="#ff00e0f4"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="23" name="Light" type="tree_light" x="419.167" y="187">
-   <properties>
-    <property name="color" type="color" value="#ffff08f3"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="24" name="Light" type="tree_light" x="198.75" y="61.6663">
-   <properties>
+    <property name="collision" type="bool" value="false"/>
     <property name="color" type="color" value="#ff8ffd00"/>
    </properties>
    <point/>
   </object>
-  <object id="38" name="Car light front" type="car_light_front" x="129.75" y="427.25">
+  <object id="38" name="Car light front" type="car_light_front" x="126" y="423.5">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
    <point/>
   </object>
-  <object id="40" name="Car light back" type="car_light_back" x="29.5" y="419.25">
+  <object id="40" name="Car light back" type="car_light_back" x="33.75" y="417.375">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
  <objectgroup name="events">
   <object id="25" type="event" x="254" y="224" width="65.5" height="32">
    <properties>
+    <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
     <property name="say" value="This forest looks really creepy..."/>
    </properties>
   </object>
-  <object id="30" type="event" x="-0.25" y="350.75" width="41.75" height="129.75">
+  <object id="30" type="event" x="2.20833" y="341.5" width="45.75" height="137.083">
    <properties>
+    <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
     <property name="say" value="I really want to explore the forest first"/>
     <property name="sticky" value="true"/>

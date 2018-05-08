@@ -10,6 +10,7 @@ import de.bitbrain.braingdx.BrainGdxGame;
 import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.graphics.animation.SpriteSheet;
+import de.bitbrain.braingdx.graphics.lighting.LightingManager;
 import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
 import de.bitbrain.braingdx.postprocessing.effects.Vignette;
 import de.bitbrain.braingdx.screens.AbstractScreen;
@@ -51,14 +52,10 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         vignette.setSaturationMul(1.1f);
         context.getRenderPipeline().getPipe(RenderPipeIds.WORLD).addEffects(vignette);
 
-        context.getLightingManager().setAmbientLight(Color.valueOf("#221166"));
-
-
         // CORE components
         context.getEventManager().register(new SpeechHandler(context.getStage()), SayEvent.class);
-        new Teleporter(loader, context.getGameWorld(), context.getEventManager());
+        new Teleporter(loader, context.getGameWorld(), context.getEventManager(), context.getTiledMapManager().getAPI());
         loader.load(Assets.TiledMaps.INTRO);
-        loader.update();
     }
 
     @Override

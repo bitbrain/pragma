@@ -36,6 +36,9 @@ public class LevelLoader {
             Gdx.app.log("LEVEL", "LOAD " + level);
             TiledMap map = SharedAssetManager.getInstance().get(level, TiledMap.class);
             if (map != null) {
+                // Clearing lighting
+                context.getLightingManager().clear();
+                context.getTiledMapManager().getAPI().setDebug(true);
                 context.getTiledMapManager().load(map, context.getGameCamera().getInternal(), TiledMapType.ORTHOGONAL);
                 GameObject player = null;
                 for (GameObject o : context.getGameWorld()) {
@@ -45,7 +48,18 @@ public class LevelLoader {
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
                     }
+                    if ("car_light_front".equals(o.getType())) {
+                        context.getLightingManager().addConeLight(UUID.randomUUID().toString(),  o.getLeft(), o.getTop(), 320f, 0f, 15f,
+                        Color.YELLOW);
+                        context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 50f, Color.YELLOW);
+                    }
+                    if ("car_light_back".equals(o.getType())) {
+                        context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 50f, Color.RED);
+                    }
                 }
+
+                context.getLightingManager().setAmbientLight(Color.valueOf("#111144"));
+
                 context.getGameCamera().setTarget(player);
                 context.getGameCamera().setBaseZoom(340f / Gdx.graphics.getWidth());
                 context.getGameCamera().setZoomScale(0.0001f);
@@ -58,7 +72,7 @@ public class LevelLoader {
                         .rasterSize(context.getTiledMapManager().getAPI().getCellWidth(), context.getTiledMapManager().getAPI().getCellHeight());
                 context.getBehaviorManager().apply(behavior, player);
 
-                context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#444444"), 300f, context.getLightingManager()), player);
+                context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#333333"), 180f, context.getLightingManager()), player);
 
                 EventHandler eventHandler = new EventHandler(context.getEventManager());
                 context.getBehaviorManager().apply(eventHandler);
