@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="37">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextobjectid="42">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJydUVsKwDAIk+7D3v/EW2FCyJJS9xFsfcY4I2K+GA8S/uUrP8c4p1D+3MQ47vIVKhc5I5Az2h3nEV8duJ/Tg/ukmMNvx4F58q5qFlqlh9KEObm5J/dQd3Vau76o59UA79atxfpOLWv5l/Pa9wZj7QPe
+   eJydUVsKwDAIk+7T3v+8W2FCyJJS9xFsfcY4I2K+GA8S/uUrP8c4p1D+3MQ47vIVKhc5I5Az2h3nEV8duJ/Tg/ukmMNvx4F58q5qFlqlh9KEObm5J/dQd3Vau76o59UA79atxfpOLWv5l/Pa9wZg2gVC
   </data>
  </layer>
  <layer name="base1" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4D+gAWKcQEuAjQ+IECA5iRSLz8WvfiAGAEaFwAAjBwBIQ==
+   eJxjYBgFo4D+gAWKcQE+AjQ+IEGA5iVSrzgWvfiAEgEaFwAAyVwBrQ==
   </data>
  </layer>
  <layer name="base2" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgYIAjEQlRQhy5PrLnEAlqbT8g+YuUGwhxy1MLUCAMxHw41vAQwIxCL4tFPDBChUC+56QDZXpgZAGPsAvc=
+   eJxjYBgYIAnEUlRQhy5PrLnEAlqbT8g+YuUGwhxy1MLUyAOxGA41ogQwIxAr4tFPDFDAIS4IxEJALExAL7npANlemBkAlOIEqQ==
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="8" name="John" type="JOHN" x="128.833" y="385.5" width="32" height="32"/>
+  <object id="8" name="John" type="JOHN" x="63.833" y="447.5" width="32" height="32"/>
   <object id="18" type="event" x="-2.66667" y="0.666667" width="482" height="31.3333">
    <properties>
     <property name="teleport" value="@level=pathway;bottom"/>
@@ -44,10 +44,16 @@
    </properties>
    <point/>
   </object>
-  <object id="24" name="Light" type="tree_light" x="8.16667" y="461.333">
+  <object id="24" name="Light" type="tree_light" x="198.75" y="61.6663">
    <properties>
     <property name="color" type="color" value="#ff8ffd00"/>
    </properties>
+   <point/>
+  </object>
+  <object id="38" name="Car light front" type="car_light_front" x="129.75" y="427.25">
+   <point/>
+  </object>
+  <object id="40" name="Car light back" type="car_light_back" x="29.5" y="419.25">
    <point/>
   </object>
  </objectgroup>
@@ -58,7 +64,7 @@
     <property name="say" value="This forest looks really creepy..."/>
    </properties>
   </object>
-  <object id="30" type="event" x="4.25" y="354.5" width="86" height="111">
+  <object id="30" type="event" x="-0.25" y="350.75" width="41.75" height="129.75">
    <properties>
     <property name="producer" value="JOHN"/>
     <property name="say" value="I really want to explore the forest first"/>
@@ -68,7 +74,7 @@
  </objectgroup>
  <layer name="overlay1" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjZWBgYGMgDFixqOMGYh4c8sh8ZHXYALo8NvX4zCcEiDEfHeAzn5Dd+MIFnxy55hByHzHhSYy5pKihFyAlHaADmD+oYQYlAAA5lAH/
+   eJxjZWBgYGMgDFixqOMHYgEc8sh8ZHXYALo8NvX4zCcEiDEfHeAzn5Dd+MIFnxy55hByHzHhSYy5pKihF8DmD3Yg5gBiTgJ6Yf4gJS3hMoMSAAA+SwKP
   </data>
  </layer>
 </map>
