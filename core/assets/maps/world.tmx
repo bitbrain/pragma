@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextobjectid="43">
+ <tileset firstgid="1" source="forest.tsx"/>
+ <layer name="ground" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJytlsGOAyEMQ0fscfr/37taqSMhr5+T0B5QKwaIie2E13VdLxnrPXT+k+HO68RQLMvsXTJcjLSmg+V+j+pu1TkOzx6D9i+Iv7a93dxPMCo2wkDf7us/PuLUxUrxEp+3nLVkTr93NXXLHsr7vu42813fJO6djhxeh4vwTfRfeYLy18WWvqlG0lBddfxPWu7cOWHucEj3r2qH7iF/qA8IX+oDyc/kUdWp5t79Kq79nA7nuo7wTT1Z6Sd5qMLn7q93drx/0rOTBtKdk8dSbSaNV1rr+KeaS33U3SOdeaKbyg+UL5e/yvepZnS0XNUAV8+1v57kJ+XCxe7gO8VD/HW1SjWQcqS8Vt+neqs0oNrXnks1uOKM+J2+QfZ6l/JavdFIT643pT4z4UJzPFlfcZl6buI+aULzSmelt5Xj/ESr1EsUH2k1xZxwNznnwTN5H7hckE/oXdDBR/5VjbseUmnP6aLDg/ot6ZPqVGfdxCda7/ZYeuaJrvZ7utzvGqI4LkeOi0+0nfLjMFP+ScsOZ1fX6gHXp1xe6H96VyWc1E86dTr5QWPSfaYxUl9RzTmeE3fp3sSjO8/5wNUk8n3SIeWvO7q1xPGo9UN9kXCdvD0US3rPqU87+XZeSPj+5n8GI+nQ5ZrW0Hv6G/hIn4kL9Ugnr8/cBF/lH8VDXqnuso9Tfk+86PCR1588/gJFbjg2
+  </data>
+ </layer>
+ <layer name="base1" width="40" height="40">
+  <properties>
+   <property name="collision" type="bool" value="false"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzqEKwDAQRMETsY1Ndf//I2MiAhHnclBmYFn7IgAAAAAA+KO2VqknX+1N/rmbc9h7Rpx91b7kK01X6gGt
+  </data>
+ </layer>
+ <layer name="base2" width="40" height="40">
+  <properties>
+   <property name="collision" type="bool" value="false"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0jsKgDAURcG4BBUFbYz736SvtPCHYIIwA6cJgdwiKQEAAAAA8GdTNB+cL9FYeMvecFMTranuxidyxbfbqIv6izu5zJTXcjr/o1/aADVcAhI=
+  </data>
+ </layer>
+ <objectgroup name="events">
+  <object id="25" type="event" x="254" y="1024" width="65.5" height="32">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+    <property name="producer" value="JOHN"/>
+    <property name="say" value="This forest looks really creepy..."/>
+   </properties>
+  </object>
+  <object id="30" type="event" x="0.935603" y="1141.86" width="45.75" height="137.083">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+    <property name="producer" value="JOHN"/>
+    <property name="say" value="I really want to explore the forest first"/>
+    <property name="sticky" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="spawn">
+  <object id="8" name="John" type="JOHN" x="63.833" y="1247.5" width="32" height="32">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="lights">
+  <object id="38" name="Car light front" type="car_light_front" x="126.25" y="1225.38">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="40" name="Car light back" type="car_light_back" x="33.75" y="1217.38">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="42" name="Car light front" type="car_light_front" x="125.875" y="1220.5">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <layer name="overlay1" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt0jEOgDAMBEE3EKjI/1+be0GokIU0I23n4gpXAQAAAAD0OtLZPWLjSbN7BJ8Y6Ur3y50f/Z8FG88AbQ==
+  </data>
+ </layer>
+</map>

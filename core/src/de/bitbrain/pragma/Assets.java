@@ -3,8 +3,7 @@ package de.bitbrain.pragma;
 public interface Assets {
 
     interface TiledMaps {
-        String INTRO = "maps/intro.tmx";
-        String PATHWAY = "maps/pathway.tmx";
+        String INTRO = "maps/world.tmx";
     }
 
     interface Textures {

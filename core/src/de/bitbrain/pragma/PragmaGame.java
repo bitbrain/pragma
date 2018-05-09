@@ -1,5 +1,6 @@
 package de.bitbrain.pragma;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 
 import de.bitbrain.braingdx.BrainGdxGame;
