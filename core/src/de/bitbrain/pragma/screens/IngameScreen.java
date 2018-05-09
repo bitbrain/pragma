@@ -2,6 +2,7 @@ package de.bitbrain.pragma.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 
@@ -53,6 +54,12 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         // CORE components
         context.getEventManager().register(new SpeechHandler(context.getStage()), SayEvent.class);
         loader.load(Assets.TiledMaps.INTRO);
+
+        // Creepy stuff
+        Music soundscape = SharedAssetManager.getInstance().get(Assets.Musics.SOUNDSCAPE, Music.class);
+        soundscape.setLooping(true);
+        soundscape.setVolume(0.1f);
+        soundscape.play();
     }
 
     @Override

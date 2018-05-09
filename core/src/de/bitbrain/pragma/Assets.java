@@ -22,4 +22,8 @@ public interface Assets {
         String BITBRAIN = "sounds/bitbrain.ogg";
         String ENGINE_RUNNING = "sounds/engine-running.ogg";
     }
+
+    interface Musics {
+        String SOUNDSCAPE = "music/soundscape.ogg";
+    }
 }

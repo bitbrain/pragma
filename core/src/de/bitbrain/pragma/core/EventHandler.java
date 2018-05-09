@@ -72,7 +72,7 @@ public class EventHandler implements Behavior {
             } else {
                 Gdx.app.log("WARN", "Unable to publish event for " + source + "! Not supported by EventFactory!");
             }
-        } else if (properties.containsKey("sticky") && properties.get("sticky").equals("true")) {
+        } else if (properties.containsKey("sticky") && (Boolean)properties.get("sticky")) {
             if (eventIds.contains(source.getId())) {
                eventIds.remove(source.getId());
             }
