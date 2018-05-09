@@ -39,7 +39,7 @@
   </data>
  </layer>
  <objectgroup name="events">
-  <object id="25" type="event" x="49.6667" y="1250" width="66.8333" height="24">
+  <object id="25" type="event" x="49" y="1248" width="66.8333" height="24">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>

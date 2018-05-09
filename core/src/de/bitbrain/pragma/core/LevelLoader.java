@@ -1,6 +1,7 @@
 package de.bitbrain.pragma.core;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
@@ -8,13 +9,20 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 
 import java.util.UUID;
 
+import aurelienribon.tweenengine.BaseTween;
+import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenCallback;
 import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
+import de.bitbrain.braingdx.behavior.BehaviorAdapter;
 import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
 import de.bitbrain.braingdx.graphics.lighting.PointLightBehavior;
 import de.bitbrain.braingdx.input.OrientationMovementController;
 import de.bitbrain.braingdx.tmx.TiledMapAPI;
+import de.bitbrain.braingdx.tmx.TiledMapListener;
+import de.bitbrain.braingdx.tmx.TiledMapListenerAdapter;
 import de.bitbrain.braingdx.tmx.TiledMapType;
+import de.bitbrain.braingdx.tweens.SharedTweenManager;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 
@@ -65,6 +73,26 @@ public class LevelLoader {
                 if (player == null) {
                     throw new GdxRuntimeException("No player initialised! Create an object of type '" + CharacterType.JOHN.name() + "'");
                 }
+
+                // FOOTSTEPS
+                context.getBehaviorManager().apply(new BehaviorAdapter() {
+
+                    private float lastX, lastY;
+                    @Override
+                    public void update(GameObject source, float delta) {
+                        if (lastX != source.getLastPosition().x || lastY != source.getLastPosition().y) {
+                            lastX = source.getLastPosition().x;
+                            lastY = source.getLastPosition().y;
+                            SharedAssetManager.getInstance().get(Assets.Sounds.FOOTSTEP, Sound.class).play(0.3f, (float)Math.random() * 0.5f + 0.7f, 0f);
+                            Tween.call(new TweenCallback() {
+                                @Override
+                                public void onEvent(int i, BaseTween<?> baseTween) {
+                                    SharedAssetManager.getInstance().get(Assets.Sounds.FOOTSTEP, Sound.class).play(0.2f, (float)Math.random() * 0.5f + 0.7f, 0f);
+                                }
+                            }).delay(0.3f).start(SharedTweenManager.getInstance());
+                        }
+                    }
+                }, player);
 
                 context.getLightingManager().setAmbientLight(Color.valueOf("#111144"));
 
