@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="30" height="50" tilewidth="32" tileheight="32" infinite="0" nextobjectid="48">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="30" height="50" tilewidth="32" tileheight="32" infinite="0" nextobjectid="49">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="30" height="50">
   <data encoding="base64" compression="zlib">
@@ -20,7 +20,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0jEOQEAQhtF1BISEBve/pNGv2MIo5L3ka7aYv9lSAAAAAN61RGvlfYvmhL3poS46krZb7Ak3+2iIxo93W1y7d38A4M9Oz9wCEg==
+   eJzt080KQEAYheGxYOsvig0T7v8WHWUplMYn8z71rpQzajgHAAAAAABC6lQfyRnmkxY1qFZNB8+eaC5KlN+3LYwB3lmqStUv796x7X7h3luI9bsRRqoyg91cFQa7f/h/Vlf8BKo=
   </data>
  </layer>
  <objectgroup name="spawn">
@@ -47,7 +47,7 @@
     <property name="sticky" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="47" type="event" x="254.25" y="1103" width="65.5" height="32">
+  <object id="47" type="event" x="256.25" y="1090.33" width="65.5" height="32">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
@@ -83,7 +83,7 @@
  </objectgroup>
  <layer name="overlay1" width="30" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt0jsKACAMREEbf5Xe/7TmBlYi6Ay8LrBNUgIAAABOy1G5sDuieWH3JzVqUd/c+QGA9y3RXgBt
+   eJzt0jEOgCAQRUEaFSu5/2n9N6BTws4kryPZ3YTWAAAA4FtHOn+Y+6Sx0A7s4Uo93ZN3Vf9c1buBml4LmwDB
   </data>
  </layer>
 </map>

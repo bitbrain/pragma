@@ -42,4 +42,19 @@
    <property name="collision" value="true"/>
   </properties>
  </tile>
+ <tile id="34">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="35">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="36">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
 </tileset>
