@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextobjectid="43">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextobjectid="45">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="40" height="40">
   <data encoding="base64" compression="zlib">
@@ -23,6 +23,21 @@
    eJzt0jsKgDAURcG4BBUFbYz736SvtPCHYIIwA6cJgdwiKQEAAAAA8GdTNB+cL9FYeMvecFMTranuxidyxbfbqIv6izu5zJTXcjr/o1/aADVcAhI=
   </data>
  </layer>
+ <objectgroup name="spawn">
+  <object id="8" name="John" type="JOHN" x="63.833" y="1247.5" width="32" height="32">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="misc" width="40" height="40">
+  <properties>
+   <property name="collision" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAMCXARkAAAE=
+  </data>
+ </layer>
  <objectgroup name="events">
   <object id="25" type="event" x="254" y="1024" width="65.5" height="32">
    <properties>
@@ -40,30 +55,28 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="spawn">
-  <object id="8" name="John" type="JOHN" x="63.833" y="1247.5" width="32" height="32">
-   <properties>
-    <property name="collision" type="bool" value="false"/>
-   </properties>
-  </object>
- </objectgroup>
  <objectgroup name="lights">
   <object id="38" name="Car light front" type="car_light_front" x="126.25" y="1225.38">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
   <object id="40" name="Car light back" type="car_light_back" x="33.75" y="1217.38">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
   <object id="42" name="Car light front" type="car_light_front" x="125.875" y="1220.5">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup name="audio">
+  <object id="43" name="Engine Sound" type="engine_sound" x="107.273" y="1221.64">
    <point/>
   </object>
  </objectgroup>

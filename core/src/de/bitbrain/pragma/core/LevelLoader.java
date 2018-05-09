@@ -16,6 +16,7 @@ import de.bitbrain.braingdx.input.OrientationMovementController;
 import de.bitbrain.braingdx.tmx.TiledMapAPI;
 import de.bitbrain.braingdx.tmx.TiledMapType;
 import de.bitbrain.braingdx.world.GameObject;
+import de.bitbrain.pragma.Assets;
 
 public class LevelLoader {
 
@@ -55,6 +56,9 @@ public class LevelLoader {
                     }
                     if ("car_light_back".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 50f, Color.RED);
+                    }
+                    if ("engine_sound".equals(o.getType())) {
+                        context.getAudioManager().spawnSoundLooped(Assets.Sounds.ENGINE_RUNNING, o.getLeft(), o.getTop(), 1f, 1f, 300f);
                     }
                 }
 
