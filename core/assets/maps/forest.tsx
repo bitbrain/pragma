@@ -102,6 +102,16 @@
    <property name="collision" value="true"/>
   </properties>
  </tile>
+ <tile id="242">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="243">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
  <tile id="249">
   <properties>
    <property name="collision" value="true"/>
