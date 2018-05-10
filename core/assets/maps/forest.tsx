@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tileset SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<tileset name="forest" tilewidth="16" tileheight="16" tilecount="160" columns="20">
- <image source="forest.png" width="320" height="128"/>
+<tileset name="forest" tilewidth="16" tileheight="16" tilecount="280" columns="20">
+ <image source="forest.png" width="320" height="224"/>
  <tile id="52">
   <properties>
    <property name="collision" value="true"/>
@@ -98,6 +98,26 @@
   </properties>
  </tile>
  <tile id="153">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="249">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="250">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="269">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="270">
   <properties>
    <property name="collision" value="true"/>
   </properties>

@@ -66,7 +66,7 @@ public class LevelLoader {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 50f, Color.RED);
                     }
                     if ("engine_sound".equals(o.getType())) {
-                        context.getAudioManager().spawnSoundLooped(Assets.Sounds.ENGINE_RUNNING, o.getLeft(), o.getTop(), 1f, 1f, 300f);
+                        context.getAudioManager().spawnSoundLooped(Assets.Sounds.ENGINE_RUNNING, o.getLeft(), o.getTop(), 1f, 1f, 420f);
                     }
                 }
 
@@ -100,7 +100,7 @@ public class LevelLoader {
                 // Setup player movement
                 OrientationMovementController controller = new OrientationMovementController();
                 RasteredMovementBehavior behavior = new RasteredMovementBehavior(controller, context.getTiledMapManager().getAPI())
-                        .interval(0.25f)
+                        .interval(0.35f)
                         .rasterSize(context.getTiledMapManager().getAPI().getCellWidth(), context.getTiledMapManager().getAPI().getCellHeight());
                 context.getBehaviorManager().apply(behavior, player);
 
