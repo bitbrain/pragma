@@ -26,7 +26,7 @@ public final class Styles {
         FreeTypeFontGenerator generator = SharedAssetManager.getInstance().get(fontPath, FreeTypeFontGenerator.class);
         FreeTypeFontGenerator.FreeTypeFontParameter param = new FreeTypeFontGenerator.FreeTypeFontParameter();
         param.color = Color.WHITE;
-        param.mono = true;
+        param.mono = false;
         param.size = size;
         return generator.generateFont(param);
     }

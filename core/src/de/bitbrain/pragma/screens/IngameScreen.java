@@ -42,7 +42,7 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         context.getTiledMapManager().load(map, context.getGameCamera().getInternal(), TiledMapType.ORTHOGONAL);
 
         final Texture texture = SharedAssetManager.getInstance().get(Assets.Textures.PLAYER_TILESET);
-        SpriteSheet sheet = new SpriteSheet(texture, 4, 4);
+        SpriteSheet sheet = new SpriteSheet(texture, 4, 8);
         CharacterInitializer.createAnimations(context, sheet);
 
         Vignette vignette = new Vignette(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);

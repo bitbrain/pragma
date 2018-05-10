@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="57">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="68">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="40" height="80">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="base1" width="40" height="80">
@@ -12,7 +12,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   eJztWlmOFDEMrTkAyw9zC7gDywWAkVgP0BLr70homAuM1Ejs/404BFdghrvAD8sHtrosWZYdxylXp5B4ktVdlYrt8hYn3cOwDLzorYCDI6CD3ko4WIqO+0BnQJeUsdc71kXDevzcAJ0OW12/Dlt9P/dSisHKhROgL7tUZNj6Em3D7fTNeHajjFlxkIWMuoF6z6VnZk7OpefafyQE1DNTR7Th7ZGybHnSOK9U2xCo602gW0Obvofj3L1RFuWdlCfzksZ5bauJlUg9PhTyea5zn8sxPi7z1fNDpB4Tr31jnOq9Vb9wvsxXzhPnSntG6rEn3wPpgjpSfFGcEE+Ze7vsCay8lz7H53jsttqjBZQXveT/xzRQfVxCn6vh1fhJa9aS9ETb7Yl7qx6KMJA/ac2T6G3H2l6mpx2tNfQ70I/xe8/9dU2vtQT9uL0kevpXi0HqQ0/H6957f1rTPw1bXVdibErfkw1tn8pxD+g+0AOgh0HeP4F+Af0G+tOknY8nQE+BngE9D849B0X2PNAFoItawf1HsAs7c0RjotbOU2KNw4uJVnt5fLP0t+w1lb+lf1b8SP5ZfOfK0yl8sVfLWmOkXzPiiPbv0f2B5jPp1yk1l7Bh32VfW4qbnjWb+oolrhvUF83Vm2XkMsZktLetlRutmRpf1G/tzPPkRu1k5ZL2PvxMrpSDU/Kntfbw/bQXg1PyJ1J7rP30Ebvfa58gzx/OFMJ85nuZXfV3CNqneL9x8d8Je9dDLe69/U0NvJxorRUZshFeTmSs1xY03nPuR2pt3VoDS/P4mKVHra1ba2BpHh9r8XlGjEfncJuWxtAX2THO51i6cptKtMZRC7JzuEX3Ke+UtTdGWLrP3Ve0vn/mu5f0ke9fKzd6LiDvW895/pByJQ/P3py/fFcuN2O/pvGI9P5Z+VsTgzW1zLNDSU4prmpkZNiiJMfi/w7ofeDzA9BHIfcN0Nsgr9pn+X9lot+zfhf04us60I3ANYe3L7TiqpTbEneA7irXl4GuKOMcdDYR7e2s+xofKf8R0GOgq0DX2LUGOpvIqiUaHynfsqeGmrOdqX2R1M+75lhVyJd1JbpuvwQ6DlxL/SJr+Fzn7RY0/0Zice5z0+z/bmYD/dt6lqDdz/Y3+pf7s+a3gKFwP9vf0r/Z/P8C75GjfA==
   </data>
  </layer>
  <layer name="base2" width="40" height="80">
@@ -27,6 +27,7 @@
   <object id="49" name="SPAWN" type="JOHN" x="68.5" y="1220.25">
    <point/>
   </object>
+  <object id="66" name="KALMAG" type="KALMAG" x="161.5" y="1170.5" width="29" height="29"/>
  </objectgroup>
  <layer name="misc" width="40" height="80">
   <properties>
@@ -100,6 +101,54 @@
    <point/>
   </object>
   <object id="42" name="Car light front" type="car_light_front" x="108.875" y="1140.25">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="57" name="Blood Light" type="blood_light" x="503.333" y="662">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="58" name="Blood Light" type="blood_light" x="478" y="776.333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="59" name="Blood Light" type="blood_light" x="593.333" y="781.667">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="60" name="Blood Light" type="blood_light" x="191" y="460">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="61" name="Blood Light" type="blood_light" x="256" y="430.25">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="62" name="Blood Light" type="blood_light" x="487" y="222">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="63" name="Blood Light" type="blood_light" x="73" y="231.5">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="64" name="Blood Light" type="blood_light" x="532" y="47">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>

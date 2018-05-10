@@ -53,6 +53,10 @@ public class LevelLoader {
                     if (CharacterType.JOHN.name().equals(o.getType())) {
                         player = o;
                     }
+                    if (CharacterType.KALMAG.name().equals(o.getType())) {
+                        o.setDimensions(64, 32);
+                        context.getBehaviorManager().apply(new PointLightBehavior(Color.RED, 200f, context.getLightingManager()), o);
+                    }
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
                     }
@@ -64,6 +68,9 @@ public class LevelLoader {
                     }
                     if ("car_light_back".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 50f, Color.RED);
+                    }
+                    if ("blood_light".equals(o.getType())) {
+                        context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, Color.valueOf("#330000"));
                     }
                     if ("engine_sound".equals(o.getType())) {
                         context.getAudioManager().spawnSoundLooped(Assets.Sounds.ENGINE_RUNNING, o.getLeft(), o.getTop(), 1f, 1f, 420f);
@@ -89,7 +96,6 @@ public class LevelLoader {
                 }, player);
 
                 context.getLightingManager().setAmbientLight(Color.valueOf("#111144"));
-
                 // Setup camera
                 context.getGameCamera().setTarget(player);
                 context.getGameCamera().setBaseZoom(340f / Gdx.graphics.getWidth());
