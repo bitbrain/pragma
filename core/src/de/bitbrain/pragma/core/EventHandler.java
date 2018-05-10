@@ -11,6 +11,7 @@ import de.bitbrain.braingdx.behavior.Behavior;
 import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.event.GameEventManager;
 import de.bitbrain.braingdx.world.GameObject;
+import de.bitbrain.braingdx.world.GameWorld;
 
 public class EventHandler implements Behavior {
 
@@ -18,11 +19,13 @@ public class EventHandler implements Behavior {
     private Rectangle sourceRect, targetRect;
     private final EventFactory eventFactory = new EventFactory();
     private Set<String> eventIds = new HashSet<String>();
+    private GameWorld gameWorld;
 
-    public EventHandler(GameEventManager gameEventManager) {
+    public EventHandler(GameEventManager gameEventManager, GameWorld gameWorld) {
         this.gameEventManager = gameEventManager;
         this.sourceRect = new Rectangle();
         this.targetRect = new Rectangle();
+        this.gameWorld = gameWorld;
     }
 
     @Override
@@ -62,6 +65,7 @@ public class EventHandler implements Behavior {
         if (sourceRect.contains(targetRect) || sourceRect.overlaps(targetRect)) {
             if (eventIds.contains(source.getId())) {
                 // Event already consumed!
+                gameWorld.remove(source);
                 return;
             }
             eventIds.add(source.getId());

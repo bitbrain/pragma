@@ -84,12 +84,6 @@ public class LevelLoader {
                             lastX = source.getLastPosition().x;
                             lastY = source.getLastPosition().y;
                             SharedAssetManager.getInstance().get(Assets.Sounds.FOOTSTEP, Sound.class).play(0.3f, (float)Math.random() * 0.5f + 0.7f, 0f);
-                            Tween.call(new TweenCallback() {
-                                @Override
-                                public void onEvent(int i, BaseTween<?> baseTween) {
-                                    SharedAssetManager.getInstance().get(Assets.Sounds.FOOTSTEP, Sound.class).play(0.2f, (float)Math.random() * 0.5f + 0.7f, 0f);
-                                }
-                            }).delay(0.3f).start(SharedTweenManager.getInstance());
                         }
                     }
                 }, player);
@@ -106,7 +100,7 @@ public class LevelLoader {
                 // Setup player movement
                 OrientationMovementController controller = new OrientationMovementController();
                 RasteredMovementBehavior behavior = new RasteredMovementBehavior(controller, context.getTiledMapManager().getAPI())
-                        .interval(0.65f)
+                        .interval(0.25f)
                         .rasterSize(context.getTiledMapManager().getAPI().getCellWidth(), context.getTiledMapManager().getAPI().getCellHeight());
                 context.getBehaviorManager().apply(behavior, player);
 
@@ -117,7 +111,8 @@ public class LevelLoader {
                 float normalizedX = (float)Math.floor(player.getLeft() / api.getCellWidth()) * api.getCellWidth();
                 float normalizedY = (float)Math.floor(player.getTop() / api.getCellHeight()) * api.getCellHeight();
                 player.setPosition(normalizedX, normalizedY);
-                context.getBehaviorManager().apply(new EventHandler(context.getEventManager()));
+                player.setDimensions(32, 16);
+                context.getBehaviorManager().apply(new EventHandler(context.getEventManager(), context.getGameWorld()));
             }
             level = null;
         }

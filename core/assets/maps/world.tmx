@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="30" height="50" tilewidth="32" tileheight="32" infinite="0" nextobjectid="49">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="30" height="50" tilewidth="16" tileheight="16" infinite="0" nextobjectid="53">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="30" height="50">
   <data encoding="base64" compression="zlib">
-   eJytVsGuwyAMq9gR/v97d9mkyLIdAz2gvsdonMSO6XqeZ8Eav4X7NwvjIcYg5wYsFs+dYbgMI8mbYUzz/vj93vUgxUZMjF1z7HBrDBfH9XVCrCH26vnaL4aL5ybZT3RWsVkeDE/hqoX5OJwO0/2GXKl3GccqZ1Wf4sy9VzlVM8L0yHQ1Q1zlB2phf3CvPhWvyIHCTbSTzHz9H3FZvpgj6/+Op7uzCifxDKX5Th9uT3kY02kX02mq64vqvdNx13uXH8PD/VSP7N20zh0chev6jneG80z1u4vrckN8nDfnDTgvSS9wXl0f3F3KcmZ92uWt+n2q3W4p/lX8Whub6aQOl4fyLsQ98dUuJ6Uddd8pfan7IMFVenb3HpuZbsbYbDn+2Tzu6Ivd03Welb5rXuzbrHLkuHIcujl29bBcVL+UVlidqB3md0qL7O/kO87xlfgF80iVp6oZa6xP1u8FT4eHsZl+sHedF7neqHqTmWHvsTmpNXfzrubB3afMB7v5rjl/NpbjWelD5b6L6/hPePo/d3A73XW6GIe4zJecB66XcBlvCc9snfT5BAvP3+AmGMqTbvuMGsP+o/7WBW6nVeUl8yVcvJudzyH2KS5+oyAH3T1522cWt6v1LX6TvZrXrj93dbrvFZytLwqPLLw=
+   eJztlFEOwiAQRElqaW+gYK+ld6j3P4D7IclkXI1ZSP2Zj8nSQhjebOmUUjqZpoPr2XT5Qz2aU7ziFa94xSte8YpXvOIVr3jFK17xind0nR1lqJneeWsjvAXkeVUYFxqX13yEt9De7FVpjZdJlLem9yy9Myym1fHt5Z0pS65X0zaIl/vH7PmH+QjvAvt5vW7ZfvON8GJ23McK8+jLfe7pbwHv5lU/9IH7HOFdYW++w5xre76Z7p28m+OLmXu+u+kB5xtxf/H/1XLm744V4X0CazdQaQ==
   </data>
  </layer>
  <layer name="base1" width="30" height="50">
@@ -12,7 +12,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzSEOwDAMBEGD0IY2sOr/H1kSWMnIMZmRTgc3AgAAAOCMsVdhJl9lJX8d6N4/3Spv8p0eXV1d3ebuB51oAu0=
+   eJztkkkKg0AQRftCyR0yXCADZPIAgYwHEJIjuMl4Wn8vhKLptuwSd//BQ8uSavylc4QQQgghhBBCCCHEwgd+M64/+A9mvOA7c9YCLuHKcO9d9/jmGZxn1JKjMnsH9/AAi6C3gdtIPYLjSF9SKvMv8Apv8K6ce4JnOIFTUceoOsxPEc5NfX+MMvHccq5WS7T9hjT78DzgU/S0Wju37V9q9tGXWM6WXedS6a8Mgs+5LVfXoW/B56zlOkTu1pxrW9U6hg==
   </data>
  </layer>
  <layer name="base2" width="30" height="50">
@@ -20,14 +20,12 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt080KQEAYheGxYOsvig0T7v8WHWUplMYn8z71rpQzajgHAAAAAABC6lQfyRnmkxY1qFZNB8+eaC5KlN+3LYwB3lmqStUv796x7X7h3luI9bsRRqoyg91cFQa7f/h/Vlf8BKo=
+   eJztzcsNgCAABUGaQtAOwE//5fgK8GbCaSbZ85YCAAAAAHypaUst9bSnY8F3pJnOdKU7PQu+wD8vDDQDEw==
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="8" name="John" type="JOHN" x="163.166" y="1437.5" width="32" height="32">
-   <properties>
-    <property name="collision" type="bool" value="false"/>
-   </properties>
+  <object id="49" name="SPAWN" type="JOHN" x="68.5" y="740.25">
+   <point/>
   </object>
  </objectgroup>
  <layer name="misc" width="30" height="50">
@@ -39,15 +37,7 @@
   </data>
  </layer>
  <objectgroup name="events">
-  <object id="25" type="event" x="49" y="1248" width="66.8333" height="24">
-   <properties>
-    <property name="collision" type="bool" value="false"/>
-    <property name="producer" value="JOHN"/>
-    <property name="say" value="The car is still running... where is the owner?"/>
-    <property name="sticky" type="bool" value="true"/>
-   </properties>
-  </object>
-  <object id="47" type="event" x="256.25" y="1090.33" width="65.5" height="32">
+  <object id="47" type="event" x="214.417" y="552.163" width="65.5" height="32">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
@@ -55,21 +45,29 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
+  <object id="52" type="event" x="3.58335" y="630" width="128.333" height="71">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+    <property name="producer" value="JOHN"/>
+    <property name="say" value="The car is still running... where is the owner?"/>
+    <property name="sticky" type="bool" value="false"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="lights">
-  <object id="38" name="Car light front" type="car_light_front" x="126.25" y="1225.38">
+  <object id="38" name="Car light front" type="car_light_front" x="109.75" y="665.13">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
-  <object id="40" name="Car light back" type="car_light_back" x="33.75" y="1217.38">
+  <object id="40" name="Car light back" type="car_light_back" x="18.5" y="657.88">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
-  <object id="42" name="Car light front" type="car_light_front" x="125.875" y="1220.5">
+  <object id="42" name="Car light front" type="car_light_front" x="108.875" y="660.25">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
@@ -77,13 +75,18 @@
   </object>
  </objectgroup>
  <objectgroup name="audio">
-  <object id="43" name="Engine Sound" type="engine_sound" x="107.273" y="1221.64">
+  <object id="43" name="Engine Sound" type="engine_sound" x="72.273" y="661.64">
    <point/>
   </object>
  </objectgroup>
  <layer name="overlay1" width="30" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt0jEOgCAQRUEaFSu5/2n9N6BTws4kryPZ3YTWAAAA4FtHOn+Y+6Sx0A7s4Uo93ZN3Vf9c1buBml4LmwDB
+   eJztkkkOwjAQBHNlX+7sgTvLF1i+BQHeTR3iywg5cbAPQJdUsqWWeqTRZJkQQgghhBBCCCHEd1PgPeB94NN0XPEW2PWP9LCPAxziCMeJZrWwXf4XuMQV5rjGTYTuDnZNNsHpB90+XPcM5ybb4i7RXNe9x4PJjniKNMfu1XWf8fImj4Vvr3Xypvj2Widvit1raP4LpLqlKqpu6QWwCBiJ
+  </data>
+ </layer>
+ <layer name="overlay2" width="30" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1LcJwEAQBVGlMi3ItCDTgkz/FWlAySYX3oJgHky6m/2mkSRJkiRJ+oeWOuppSLw/0kQzLRX+lu6vtNFOR4W/pfsnXXTTU+Fv7fuSPnHTMsVNyxQ3LVPctBeHFAbx
   </data>
  </layer>
 </map>

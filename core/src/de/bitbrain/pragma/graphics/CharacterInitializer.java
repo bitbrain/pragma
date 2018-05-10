@@ -27,6 +27,7 @@ public class CharacterInitializer {
                     .direction(SpriteSheetAnimation.Direction.HORIZONTAL)
                     .frames(4)
                     .origin(0, 0)
+                    .scale(1f, 2f)
                     .source(sheet);
             SpriteSheetAnimationSupplier supplier = new SpriteSheetAnimationSupplier(orientations(), animation,
                     AnimationTypes.FORWARD);
