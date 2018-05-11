@@ -24,4 +24,8 @@ public interface Assets {
     interface Musics {
         String SOUNDSCAPE = "music/soundscape.ogg";
     }
+
+    interface Particles {
+        String AURA = "particles/aura.p";
+    }
 }

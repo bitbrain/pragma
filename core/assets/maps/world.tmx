@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="68">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="40" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="72">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="40" height="80">
   <data encoding="base64" compression="zlib">
@@ -12,7 +12,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="base2" width="40" height="80">
@@ -27,7 +27,7 @@
   <object id="49" name="SPAWN" type="JOHN" x="68.5" y="1220.25">
    <point/>
   </object>
-  <object id="66" name="KALMAG" type="KALMAG" x="161.5" y="1170.5" width="29" height="29"/>
+  <object id="66" name="KALMAG" type="KALMAG" x="259.5" y="83.1667" width="29" height="29"/>
  </objectgroup>
  <layer name="misc" width="40" height="80">
   <properties>
@@ -83,6 +83,14 @@
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
     <property name="say" value="Looks like... a grave."/>
+    <property name="sticky" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="71" type="event" x="-7.83317" y="209" width="656.333" height="60.6663">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+    <property name="producer" value="JOHN"/>
+    <property name="say" value="Something is not right..."/>
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
@@ -149,6 +157,24 @@
    <point/>
   </object>
   <object id="64" name="Blood Light" type="blood_light" x="532" y="47">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="68" name="Blood Light" type="blood_light" x="118" y="35.3333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="69" name="Blood Light" type="blood_light" x="54" y="105.333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="70" name="Blood Light" type="blood_light" x="210" y="187.333">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>

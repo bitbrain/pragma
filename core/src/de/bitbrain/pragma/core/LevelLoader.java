@@ -3,6 +3,8 @@ package de.bitbrain.pragma.core;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.GdxRuntimeException;
@@ -13,24 +15,26 @@ import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenCallback;
 import de.bitbrain.braingdx.GameContext;
+import de.bitbrain.braingdx.ai.pathfinding.Path;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.behavior.BehaviorAdapter;
 import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
+import de.bitbrain.braingdx.graphics.GraphicsFactory;
 import de.bitbrain.braingdx.graphics.lighting.PointLightBehavior;
+import de.bitbrain.braingdx.graphics.pipeline.RenderLayer;
+import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
 import de.bitbrain.braingdx.input.OrientationMovementController;
 import de.bitbrain.braingdx.tmx.TiledMapAPI;
-import de.bitbrain.braingdx.tmx.TiledMapListener;
-import de.bitbrain.braingdx.tmx.TiledMapListenerAdapter;
 import de.bitbrain.braingdx.tmx.TiledMapType;
-import de.bitbrain.braingdx.tweens.SharedTweenManager;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
+import de.bitbrain.pragma.Config;
+import de.bitbrain.pragma.ai.DevilController;
 
 public class LevelLoader {
 
     private String level;
     private final GameContext context;
-
 
     public LevelLoader(GameContext context) {
         this.context = context;
@@ -47,15 +51,19 @@ public class LevelLoader {
             if (map != null) {
                 // Clearing lighting
                 context.getLightingManager().clear();
+                context.getTiledMapManager().getAPI().setDebug(Config.DEBUG);
                 context.getTiledMapManager().load(map, context.getGameCamera().getInternal(), TiledMapType.ORTHOGONAL);
                 GameObject player = null;
+                GameObject devil = null;
                 for (GameObject o : context.getGameWorld()) {
                     if (CharacterType.JOHN.name().equals(o.getType())) {
                         player = o;
                     }
                     if (CharacterType.KALMAG.name().equals(o.getType())) {
+                        devil = o;
                         o.setDimensions(64, 32);
                         context.getBehaviorManager().apply(new PointLightBehavior(Color.RED, 200f, context.getLightingManager()), o);
+                        context.getParticleManager().attachEffect(Assets.Particles.AURA, o, 32f, 32f);
                     }
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
@@ -119,6 +127,37 @@ public class LevelLoader {
                 player.setPosition(normalizedX, normalizedY);
                 player.setDimensions(32, 16);
                 context.getBehaviorManager().apply(new EventHandler(context.getEventManager(), context.getGameWorld()));
+
+                // Load devil behavior
+                final DevilController devilController = new DevilController(player, devil, context.getBehaviorManager(), context.getTiledMapManager());
+
+                if (Config.DEBUG) {
+                    context.getRenderPipeline().putAfter(RenderPipeIds.PARTICLES, "devil-path", new RenderLayer() {
+
+                        private Texture texture = GraphicsFactory.createTexture(2, 2, Color.GREEN);
+
+                        @Override
+                        public void beforeRender() {
+
+                        }
+
+                        @Override
+                        public void render(Batch batch, float delta) {
+                            Path path = devilController.getPath();
+                            if (path != null) {
+                                batch.begin();
+                                for (int i = 0; i < path.getLength(); ++i) {
+                                    batch.draw(texture,
+                                            path.getX(i) * context.getTiledMapManager().getAPI().getCellWidth(),
+                                            path.getY(i) * context.getTiledMapManager().getAPI().getCellHeight(),
+                                            context.getTiledMapManager().getAPI().getCellWidth(),
+                                            context.getTiledMapManager().getAPI().getCellHeight());
+                                }
+                                batch.end();
+                            }
+                        }
+                    });
+                }
             }
             level = null;
         }
