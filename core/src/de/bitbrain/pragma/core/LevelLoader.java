@@ -3,33 +3,23 @@ package de.bitbrain.pragma.core;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 
 import java.util.UUID;
 
-import aurelienribon.tweenengine.BaseTween;
-import aurelienribon.tweenengine.Tween;
-import aurelienribon.tweenengine.TweenCallback;
 import de.bitbrain.braingdx.GameContext;
-import de.bitbrain.braingdx.ai.pathfinding.Path;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.behavior.BehaviorAdapter;
 import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
-import de.bitbrain.braingdx.graphics.GraphicsFactory;
 import de.bitbrain.braingdx.graphics.lighting.PointLightBehavior;
-import de.bitbrain.braingdx.graphics.pipeline.RenderLayer;
-import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
 import de.bitbrain.braingdx.input.OrientationMovementController;
 import de.bitbrain.braingdx.tmx.TiledMapAPI;
 import de.bitbrain.braingdx.tmx.TiledMapType;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Config;
-import de.bitbrain.pragma.ai.DevilController;
 
 public class LevelLoader {
 
@@ -129,12 +119,12 @@ public class LevelLoader {
                 context.getBehaviorManager().apply(new EventHandler(context.getEventManager(), context.getGameWorld()));
 
                 // Load devil behavior
-                final DevilController devilController = new DevilController(player, devil, context.getBehaviorManager(), context.getTiledMapManager());
+                //final DevilController devilController = new DevilController(player, devil, context.getBehaviorManager(), context.getTiledMapManager());
 
-                if (Config.DEBUG) {
+                /*if (Config.DEBUG) {
                     context.getRenderPipeline().putAfter(RenderPipeIds.PARTICLES, "devil-path", new RenderLayer() {
 
-                        private Texture texture = GraphicsFactory.createTexture(2, 2, Color.GREEN);
+                        private Texture texture = GraphicsFactory.createTexture(2, 2, Color.WHITE);
 
                         @Override
                         public void beforeRender() {
@@ -147,17 +137,21 @@ public class LevelLoader {
                             if (path != null) {
                                 batch.begin();
                                 for (int i = 0; i < path.getLength(); ++i) {
+                                    Color color = Color.valueOf("00ffff");
+                                    color.a = 1f - MathUtils.clamp(5f / (i + 1f), 0.1f, 0.9f);
+                                    batch.setColor(color);
                                     batch.draw(texture,
                                             path.getX(i) * context.getTiledMapManager().getAPI().getCellWidth(),
                                             path.getY(i) * context.getTiledMapManager().getAPI().getCellHeight(),
                                             context.getTiledMapManager().getAPI().getCellWidth(),
                                             context.getTiledMapManager().getAPI().getCellHeight());
                                 }
+                                batch.setColor(Color.WHITE);
                                 batch.end();
                             }
                         }
-                    });
-                }
+                    });*/
+                //}
             }
             level = null;
         }

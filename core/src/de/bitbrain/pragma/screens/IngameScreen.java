@@ -49,7 +49,7 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
 
         Vignette vignette = new Vignette(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
         vignette.setLutIntensity(0.7f);
-        vignette.setIntensity(0.7f);
+        vignette.setIntensity(0.9f);
         vignette.setSaturationMul(1.1f);
         context.getRenderPipeline().getPipe(RenderPipeIds.WORLD).addEffects(vignette);
 
@@ -60,7 +60,7 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         // Creepy stuff
         Music soundscape = SharedAssetManager.getInstance().get(Assets.Musics.SOUNDSCAPE, Music.class);
         soundscape.setLooping(true);
-        soundscape.setVolume(0.1f);
+        soundscape.setVolume(0.15f);
         soundscape.play();
     }
 

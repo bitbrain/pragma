@@ -23,6 +23,9 @@ public class DevilController {
 
         @Override
         public void onEnterCell(int xIndex, int yIndex, GameObject object, TiledMapAPI api) {
+            if (player == null) {
+                return;
+            }
             int playerX = IndexCalculator.calculateIndex(player.getLeft(), tiledMapManager.getAPI().getCellWidth());
             int playerY = IndexCalculator.calculateIndex(player.getTop(), tiledMapManager.getAPI().getCellHeight());
             path = tiledMapManager.getPathFinder().findPath(devil, playerX, playerY);

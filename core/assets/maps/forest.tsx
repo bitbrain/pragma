@@ -102,6 +102,11 @@
    <property name="collision" value="true"/>
   </properties>
  </tile>
+ <tile id="240">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
  <tile id="242">
   <properties>
    <property name="collision" value="true"/>
@@ -124,12 +129,12 @@
  </tile>
  <tile id="269">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="270">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
 </tileset>
