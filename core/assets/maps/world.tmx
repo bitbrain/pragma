@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="92">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="97">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="80" height="80">
   <data encoding="base64" compression="zlib">
@@ -29,9 +29,10 @@
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="49" name="SPAWN" type="JOHN" x="998.227" y="1119.01">
+  <object id="49" name="SPAWN" type="JOHN" x="972.061" y="981.591">
    <point/>
   </object>
+  <object id="95" name="KALMAG" type="KALMAG" x="817" y="784.667" width="14.5" height="14.5"/>
  </objectgroup>
  <layer name="misc" width="80" height="80">
   <properties>
@@ -41,7 +42,7 @@
    eJztwTEBAAAAwqD1T20Hb6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1wBkAAAB
   </data>
  </layer>
- <objectgroup name="texts">
+ <objectgroup name="events">
   <object id="47" type="event" x="222.417" y="995.663" width="65.5" height="32">
    <properties>
     <property name="collision" type="bool" value="false"/>
@@ -131,20 +132,20 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="90" type="event" x="926.417" y="984.833" width="144.5" height="87">
+  <object id="90" type="event" x="931.417" y="1089.83" width="96" height="43">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
     <property name="say" value="There... there is a house"/>
-    <property name="spawn" value="KALMA"/>
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
- </objectgroup>
- <objectgroup name="events">
-  <object id="91" name="ENDGAME" type="event" x="736.667" y="826" width="230" height="86">
+  <object id="93" type="event" x="883" y="863.833" width="137.333" height="54">
    <properties>
-    <property name="endgame" value=""/>
+    <property name="collision" type="bool" value="false"/>
+    <property name="endgame" value="true"/>
+    <property name="producer" value="JOHN"/>
+    <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
  </objectgroup>

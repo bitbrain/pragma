@@ -20,6 +20,7 @@ import de.bitbrain.braingdx.tmx.TiledMapType;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Config;
+import de.bitbrain.pragma.events.EndgameEvent;
 
 public class LevelLoader {
 
@@ -52,8 +53,7 @@ public class LevelLoader {
                     if (CharacterType.KALMAG.name().equals(o.getType())) {
                         devil = o;
                         o.setDimensions(64, 32);
-                        context.getBehaviorManager().apply(new PointLightBehavior(Color.RED, 200f, context.getLightingManager()), o);
-                        context.getParticleManager().attachEffect(Assets.Particles.AURA, o, 32f, 32f);
+                        o.getColor().a = 0f;
                     }
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
@@ -118,8 +118,10 @@ public class LevelLoader {
                 player.setDimensions(32, 16);
                 context.getBehaviorManager().apply(new EventHandler(context.getEventManager(), context.getGameWorld()));
 
+                context.getEventManager().register(new EndgameHandler(context, behavior, player), EndgameEvent.class);
+
                 // Load devil behavior
-                //final DevilController devilController = new DevilController(player, devil, context.getBehaviorManager(), context.getTiledMapManager());
+                //
 
                 /*if (Config.DEBUG) {
                     context.getRenderPipeline().putAfter(RenderPipeIds.PARTICLES, "devil-path", new RenderLayer() {

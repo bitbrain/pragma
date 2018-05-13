@@ -4,6 +4,7 @@ import com.badlogic.gdx.maps.MapProperties;
 
 import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.world.GameObject;
+import de.bitbrain.pragma.events.EndgameEvent;
 import de.bitbrain.pragma.events.SayEvent;
 
 class EventFactory {
@@ -13,6 +14,10 @@ class EventFactory {
             return null;
         }
         MapProperties mapProperties = (MapProperties)event.getAttribute(MapProperties.class);
+
+        if (mapProperties.containsKey("endgame")) {
+            return new EndgameEvent(event);
+        }
         if (mapProperties.containsKey("say")) {
             return new SayEvent(producer, (String)mapProperties.get("say"));
         }
