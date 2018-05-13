@@ -21,6 +21,8 @@ import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Config;
 import de.bitbrain.pragma.events.EndgameEvent;
+import de.bitbrain.pragma.events.ShowPageEvent;
+import de.bitbrain.pragma.ui.PageHandler;
 
 public class LevelLoader {
 
@@ -57,6 +59,9 @@ public class LevelLoader {
                     }
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
+                    }
+                    if ("page".equals(o.getType())) {
+                        o.setDimensions(16f, 16f);
                     }
                     if ("car_light_front".equals(o.getType())) {
                         Color color = Color.valueOf("ffecac");
@@ -118,7 +123,11 @@ public class LevelLoader {
                 player.setDimensions(32, 16);
                 context.getBehaviorManager().apply(new EventHandler(context.getEventManager(), context.getGameWorld()));
 
+                PageHandler pageHandler = new PageHandler(context);
+
                 context.getEventManager().register(new EndgameHandler(context, behavior, player), EndgameEvent.class);
+                context.getEventManager().register(pageHandler, ShowPageEvent.class);
+                context.getInput().addProcessor(pageHandler);
 
                 // Load devil behavior
                 //

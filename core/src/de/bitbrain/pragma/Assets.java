@@ -9,6 +9,8 @@ public interface Assets {
     interface Textures {
         String PLAYER_TILESET = "textures/player.png";
         String BITBRAIN_LOGO = "textures/bitbrain.png";
+        String PAGE = "textures/page.png";
+        String PAGE_NINEPATCH = "textures/page.9.png";
     }
 
     interface Fonts {

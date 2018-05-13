@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="97">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="108">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="80" height="80">
   <data encoding="base64" compression="zlib">
@@ -29,10 +29,34 @@
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="49" name="SPAWN" type="JOHN" x="972.061" y="981.591">
+  <object id="49" name="SPAWN" type="JOHN" x="107.061" y="1253.42">
    <point/>
   </object>
-  <object id="95" name="KALMAG" type="KALMAG" x="817" y="784.667" width="14.5" height="14.5"/>
+  <object id="95" name="KALMAG" type="KALMAG" x="929" y="880.667" width="14.5" height="14.5"/>
+  <object id="104" name="Page 11" type="page" x="249.879" y="895.758">
+   <properties>
+    <property name="caption" value="Page 11"/>
+    <property name="producer" value="JOHN"/>
+    <property name="text" value="A sacrifice is required to summon him. He brings reckoning among the living."/>
+   </properties>
+   <point/>
+  </object>
+  <object id="106" name="Page 1" type="page" x="648.5" y="744.833">
+   <properties>
+    <property name="caption" value="Page 5"/>
+    <property name="producer" value="JOHN"/>
+    <property name="text" value="The blood must be fresh. The flesh must be warm. Only then a sacrifice is accepted."/>
+   </properties>
+   <point/>
+  </object>
+  <object id="107" name="Page 4" type="page" x="204.083" y="329.833">
+   <properties>
+    <property name="caption" value="Page 4"/>
+    <property name="producer" value="JOHN"/>
+    <property name="text" value="The blood will free them. Only the dead will remember."/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <layer name="misc" width="80" height="80">
   <properties>
@@ -51,7 +75,7 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="52" type="event" x="3.58335" y="1110" width="128.333" height="71">
+  <object id="52" type="event" x="3.58335" y="1110" width="158.833" height="86.5">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
@@ -83,7 +107,7 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="56" type="event" x="132.584" y="326.333" width="190.333" height="167.333">
+  <object id="56" type="event" x="135.584" y="333.833" width="190.333" height="167.333">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
@@ -103,7 +127,7 @@
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
-    <property name="say" value="I really do not want to continue..."/>
+    <property name="say" value="The driver of the car might be here somewhere..."/>
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
@@ -140,7 +164,7 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="93" type="event" x="883" y="863.833" width="137.333" height="54">
+  <object id="93" type="event" x="896.333" y="877.833" width="133.333" height="73.3333">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="endgame" value="true"/>
@@ -253,6 +277,12 @@
    <point/>
   </object>
   <object id="79" name="Blood Light" type="blood_light" x="1142" y="1175">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="97" name="Blood Light" type="blood_light" x="902.667" y="839.333">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>

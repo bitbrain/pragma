@@ -84,6 +84,8 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         soundscape.play();
 
         cameraController = new CameraController(context.getGameCamera());
+
+        context.getRenderManager().register("page", new SpriteRenderer(Assets.Textures.PAGE));
     }
 
     @Override

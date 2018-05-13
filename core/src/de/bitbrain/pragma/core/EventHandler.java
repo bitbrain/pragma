@@ -45,7 +45,7 @@ public class EventHandler implements Behavior {
 
     @Override
     public void update(GameObject source, GameObject target, float delta) {
-        if (!source.getType().equals("event")) {
+        if (!source.getType().equals("event") && !source.getType().equals("page")) {
             return;
         }
         // Events do not collide!

@@ -30,12 +30,13 @@ public class SpeechHandler implements GameEventListener<SayEvent> {
             SharedTweenManager.getInstance().killTarget(actor);
             stage.getActors().removeValue(actor, true);
         }
-        actor = createDialog(event);
+        Actor dialog = createDialog(event);
         Table layout = new Table();
+        actor = layout;
         layout.setFillParent(true);
-        layout.bottom().add(actor).padBottom(Gdx.graphics.getHeight() / 5f);
+        layout.bottom().add(dialog).padBottom(Gdx.graphics.getHeight() / 5f);
         stage.addActor(layout);
-        Tween.to(actor, ActorTween.ALPHA, 1f).delay(3f)
+        Tween.to(dialog, ActorTween.ALPHA, 1f).delay(3f)
                 .setCallback(new TweenCallback() {
                     @Override
                     public void onEvent(int i, BaseTween<?> baseTween) {
