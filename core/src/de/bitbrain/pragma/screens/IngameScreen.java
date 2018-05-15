@@ -63,7 +63,6 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         }
 
         SharedAssetManager.getInstance().load(Assets.TiledMaps.INTRO, TiledMap.class);
-        SharedAssetManager.getInstance().finishLoading();
         TiledMap map = SharedAssetManager.getInstance().get(Assets.TiledMaps.INTRO, TiledMap.class);
         context.getTiledMapManager().load(map, context.getGameCamera().getInternal(), TiledMapType.ORTHOGONAL);
 

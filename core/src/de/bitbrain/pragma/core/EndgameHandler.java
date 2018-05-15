@@ -42,19 +42,21 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
     public void onEvent(EndgameEvent event) {
         for (GameObject o : context.getGameWorld()) {
             if ("KALMAG".equals(o.getType())) {
-                o.getColor().a = 1f;
-                context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#ff0044"), 400f, context.getLightingManager()), o);
-                context.getParticleManager().attachEffect(Assets.Particles.AURA, o, 32f, 32f);
-                context.getAudioManager().spawnSound(Assets.Sounds.CREATURE, o.getLeft(), o.getTop(), 1f, 1f, 300f);
-                context.getAudioManager().playMusic(Assets.Musics.ESCAPE);
-                ScreenShake.shake(5f, 2f);
-                context.getEventManager().publish(new SayEvent(player, "WHAT IS THIS?! I NEED TO GET BACK TO THE CAR!!!"));
                 final GameObject devil = o;
-                Tween.to(o, GameObjectTween.ALPHA, 3f).target(1f)//
+                context.getLightingManager().setAmbientLight(Color.valueOf("220011"));
+                context.getAudioManager().playMusic(Assets.Musics.ESCAPE);
+                ScreenShake.shake(2f, 2f);
+                context.getEventManager().publish(new SayEvent(player, "WH...WHAT IS HAPPENING?!"));
+                Tween.to(o, GameObjectTween.ALPHA, 1f).delay(5f).target(1f)//
                         .setCallback(new TweenCallback() {
                             @Override
                             public void onEvent(int i, BaseTween<?> baseTween) {
+                                context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#ff0044"), 400f, context.getLightingManager()), devil);
+                                context.getParticleManager().attachEffect(Assets.Particles.AURA, devil, 32f, 32f);
+                                context.getAudioManager().spawnSound(Assets.Sounds.CREATURE, devil.getLeft(), devil.getTop(), 1f, 1f, 300f);
+                                ScreenShake.shake(5f, 2f);
                                 devilController = new DevilController(devil, player, context.getBehaviorManager(), context.getTiledMapManager(), context.getEventManager());
+                                movementBehavior.interval(0.2f);
                             }
                         })//
                         .setCallbackTriggers(TweenCallback.COMPLETE)//
@@ -62,8 +64,5 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
                 break;
             }
         }
-
-        context.getLightingManager().setAmbientLight(Color.valueOf("220011"));
-        movementBehavior.interval(0.2f);
     }
 }

@@ -1,6 +1,7 @@
 package de.bitbrain.pragma.core;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -145,8 +146,9 @@ public class LevelLoader {
                 context.getEventManager().register(new GameEventListener<GameOverEvent>() {
                     @Override
                     public void onEvent(GameOverEvent event) {
-                        context.getBehaviorManager().remove(player);
-                        context.getScreenTransitions().out(new GameOverScreen(game), 1f);
+                        SharedAssetManager.getInstance().get(Assets.Musics.SOUNDSCAPE, Music.class).stop();
+                        SharedAssetManager.getInstance().get(Assets.Musics.ESCAPE, Music.class).stop();
+                        context.getScreenTransitions().out(new GameOverScreen(game), 0.1f);
                     }
                 }, GameOverEvent.class);
 
