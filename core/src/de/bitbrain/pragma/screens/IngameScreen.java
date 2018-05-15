@@ -13,6 +13,8 @@ import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.behavior.BehaviorAdapter;
 import de.bitbrain.braingdx.behavior.BehaviorManager;
+import de.bitbrain.braingdx.event.GameEvent;
+import de.bitbrain.braingdx.event.GameEventListener;
 import de.bitbrain.braingdx.graphics.GraphicsFactory;
 import de.bitbrain.braingdx.graphics.animation.SpriteSheet;
 import de.bitbrain.braingdx.graphics.pipeline.AbstractRenderLayer;
@@ -20,6 +22,7 @@ import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
 import de.bitbrain.braingdx.graphics.renderer.SpriteRenderer;
 import de.bitbrain.braingdx.postprocessing.effects.Vignette;
 import de.bitbrain.braingdx.screens.AbstractScreen;
+import de.bitbrain.braingdx.screens.Transitionable;
 import de.bitbrain.braingdx.tmx.TiledMapType;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
@@ -28,6 +31,7 @@ import de.bitbrain.pragma.Config;
 import de.bitbrain.pragma.ai.DevilController;
 import de.bitbrain.pragma.core.CameraController;
 import de.bitbrain.pragma.core.LevelLoader;
+import de.bitbrain.pragma.events.GameOverEvent;
 import de.bitbrain.pragma.events.SayEvent;
 import de.bitbrain.pragma.graphics.CharacterInitializer;
 import de.bitbrain.pragma.graphics.ScreenShake;
@@ -47,8 +51,8 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
     }
 
     @Override
-    protected void onCreate(GameContext context) {
-        loader = new LevelLoader(context);
+    protected void onCreate(final GameContext context) {
+        loader = new LevelLoader(context, getGame());
         setBackgroundColor(Colors.BACKGROUND);
         context.getScreenTransitions().in(3.5f);
 

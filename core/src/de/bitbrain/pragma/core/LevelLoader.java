@@ -3,17 +3,26 @@ package de.bitbrain.pragma.core;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 
 import java.util.UUID;
 
+import de.bitbrain.braingdx.BrainGdxGame;
 import de.bitbrain.braingdx.GameContext;
+import de.bitbrain.braingdx.ai.pathfinding.Path;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.behavior.BehaviorAdapter;
 import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
+import de.bitbrain.braingdx.event.GameEventListener;
+import de.bitbrain.braingdx.graphics.GraphicsFactory;
 import de.bitbrain.braingdx.graphics.lighting.PointLightBehavior;
+import de.bitbrain.braingdx.graphics.pipeline.RenderLayer;
+import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
 import de.bitbrain.braingdx.input.OrientationMovementController;
 import de.bitbrain.braingdx.tmx.TiledMapAPI;
 import de.bitbrain.braingdx.tmx.TiledMapType;
@@ -21,7 +30,9 @@ import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Config;
 import de.bitbrain.pragma.events.EndgameEvent;
+import de.bitbrain.pragma.events.GameOverEvent;
 import de.bitbrain.pragma.events.ShowPageEvent;
+import de.bitbrain.pragma.screens.GameOverScreen;
 import de.bitbrain.pragma.ui.PageHandler;
 
 public class LevelLoader {
@@ -29,8 +40,13 @@ public class LevelLoader {
     private String level;
     private final GameContext context;
 
-    public LevelLoader(GameContext context) {
+    private final BrainGdxGame game;
+
+    private GameObject player;
+
+    public LevelLoader(GameContext context, BrainGdxGame game) {
         this.context = context;
+        this.game = game;
     }
 
     public void load(String level) {
@@ -46,16 +62,18 @@ public class LevelLoader {
                 context.getLightingManager().clear();
                 context.getTiledMapManager().getAPI().setDebug(Config.DEBUG);
                 context.getTiledMapManager().load(map, context.getGameCamera().getInternal(), TiledMapType.ORTHOGONAL);
-                GameObject player = null;
-                GameObject devil = null;
+                player = null;
                 for (GameObject o : context.getGameWorld()) {
                     if (CharacterType.JOHN.name().equals(o.getType())) {
                         player = o;
                     }
                     if (CharacterType.KALMAG.name().equals(o.getType())) {
-                        devil = o;
                         o.setDimensions(64, 32);
                         o.getColor().a = 0f;
+                        TiledMapAPI api = context.getTiledMapManager().getAPI();
+                        float normalizedX = (float)Math.floor(o.getLeft() / api.getCellWidth()) * api.getCellWidth();
+                        float normalizedY = (float)Math.floor(o.getTop() / api.getCellHeight()) * api.getCellHeight();
+                        o.setPosition(normalizedX, normalizedY);
                     }
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
@@ -108,7 +126,7 @@ public class LevelLoader {
 
                 // Setup player movement
                 OrientationMovementController controller = new OrientationMovementController();
-                RasteredMovementBehavior behavior = new RasteredMovementBehavior(controller, context.getTiledMapManager().getAPI())
+                final RasteredMovementBehavior behavior = new RasteredMovementBehavior(controller, context.getTiledMapManager().getAPI())
                         .interval(0.35f)
                         .rasterSize(context.getTiledMapManager().getAPI().getCellWidth(), context.getTiledMapManager().getAPI().getCellHeight());
                 context.getBehaviorManager().apply(behavior, player);
@@ -123,16 +141,22 @@ public class LevelLoader {
                 player.setDimensions(32, 16);
                 context.getBehaviorManager().apply(new EventHandler(context.getEventManager(), context.getGameWorld()));
 
-                PageHandler pageHandler = new PageHandler(context);
 
-                context.getEventManager().register(new EndgameHandler(context, behavior, player), EndgameEvent.class);
+                context.getEventManager().register(new GameEventListener<GameOverEvent>() {
+                    @Override
+                    public void onEvent(GameOverEvent event) {
+                        context.getBehaviorManager().remove(player);
+                        context.getScreenTransitions().out(new GameOverScreen(game), 1f);
+                    }
+                }, GameOverEvent.class);
+
+                final EndgameHandler endgameHandler = new EndgameHandler(context, behavior, player);
+                final PageHandler pageHandler = new PageHandler(context);
+
+                context.getEventManager().register(endgameHandler, EndgameEvent.class);
                 context.getEventManager().register(pageHandler, ShowPageEvent.class);
-                context.getInput().addProcessor(pageHandler);
 
-                // Load devil behavior
-                //
-
-                /*if (Config.DEBUG) {
+                if (Config.DEBUG) {
                     context.getRenderPipeline().putAfter(RenderPipeIds.PARTICLES, "devil-path", new RenderLayer() {
 
                         private Texture texture = GraphicsFactory.createTexture(2, 2, Color.WHITE);
@@ -144,7 +168,7 @@ public class LevelLoader {
 
                         @Override
                         public void render(Batch batch, float delta) {
-                            Path path = devilController.getPath();
+                            Path path = endgameHandler.getPath();
                             if (path != null) {
                                 batch.begin();
                                 for (int i = 0; i < path.getLength(); ++i) {
@@ -161,8 +185,9 @@ public class LevelLoader {
                                 batch.end();
                             }
                         }
-                    });*/
-                //}
+                    });
+                }
+                context.getInput().addProcessor(pageHandler);
             }
             level = null;
         }
