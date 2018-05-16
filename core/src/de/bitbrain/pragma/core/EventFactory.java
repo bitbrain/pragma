@@ -5,6 +5,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.events.EndgameEvent;
+import de.bitbrain.pragma.events.EscapeSuccessfulEvent;
 import de.bitbrain.pragma.events.SayEvent;
 import de.bitbrain.pragma.events.ShowPageEvent;
 
@@ -24,6 +25,9 @@ class EventFactory {
         }
         if (mapProperties.containsKey("caption")) {
             return new ShowPageEvent((String)mapProperties.get("caption"), (String)mapProperties.get("text"));
+        }
+        if (mapProperties.containsKey("safezone")) {
+            return new EscapeSuccessfulEvent();
         }
         return null;
     }

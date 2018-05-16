@@ -23,12 +23,14 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
     private final GameContext context;
     private final RasteredMovementBehavior movementBehavior;
     private final GameObject player;
+    private final GameObject safezone;
     private DevilController devilController;
 
-    public EndgameHandler(GameContext context, RasteredMovementBehavior movementBehavior, GameObject player) {
+    public EndgameHandler(GameContext context, RasteredMovementBehavior movementBehavior, GameObject player, GameObject safezone) {
         this.context = context;
         this.movementBehavior = movementBehavior;
         this.player = player;
+        this.safezone = safezone;
     }
 
     public Path getPath() {
@@ -47,6 +49,8 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
                 context.getAudioManager().playMusic(Assets.Musics.ESCAPE);
                 ScreenShake.shake(2f, 2f);
                 context.getEventManager().publish(new SayEvent(player, "WH...WHAT IS HAPPENING?!"));
+                movementBehavior.interval(2f);
+                safezone.setActive(true);
                 Tween.to(o, GameObjectTween.ALPHA, 1f).delay(5f).target(1f)//
                         .setCallback(new TweenCallback() {
                             @Override

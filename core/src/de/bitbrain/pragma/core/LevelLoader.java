@@ -6,6 +6,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
@@ -31,8 +32,10 @@ import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Config;
 import de.bitbrain.pragma.events.EndgameEvent;
+import de.bitbrain.pragma.events.EscapeSuccessfulEvent;
 import de.bitbrain.pragma.events.GameOverEvent;
 import de.bitbrain.pragma.events.ShowPageEvent;
+import de.bitbrain.pragma.screens.EscapeSuccessfulScreen;
 import de.bitbrain.pragma.screens.GameOverScreen;
 import de.bitbrain.pragma.ui.PageHandler;
 
@@ -44,6 +47,8 @@ public class LevelLoader {
     private final BrainGdxGame game;
 
     private GameObject player;
+
+    private GameObject safeZone;
 
     public LevelLoader(GameContext context, BrainGdxGame game) {
         this.context = context;
@@ -78,6 +83,13 @@ public class LevelLoader {
                     }
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
+                    }
+                    if ("event".equals(o.getType())) {
+                        MapProperties mapProperties = (MapProperties)o.getAttribute(MapProperties.class);
+                        if (mapProperties.containsKey("safezone")) {
+                            o.setActive(false);
+                            safeZone = o;
+                        }
                     }
                     if ("page".equals(o.getType())) {
                         o.setDimensions(16f, 16f);
@@ -148,11 +160,22 @@ public class LevelLoader {
                     public void onEvent(GameOverEvent event) {
                         SharedAssetManager.getInstance().get(Assets.Musics.SOUNDSCAPE, Music.class).stop();
                         SharedAssetManager.getInstance().get(Assets.Musics.ESCAPE, Music.class).stop();
+                        context.getAudioManager().clear();
                         context.getScreenTransitions().out(new GameOverScreen(game), 0.1f);
                     }
                 }, GameOverEvent.class);
 
-                final EndgameHandler endgameHandler = new EndgameHandler(context, behavior, player);
+                context.getEventManager().register(new GameEventListener<EscapeSuccessfulEvent>() {
+                    @Override
+                    public void onEvent(EscapeSuccessfulEvent event) {
+                        SharedAssetManager.getInstance().get(Assets.Musics.SOUNDSCAPE, Music.class).stop();
+                        SharedAssetManager.getInstance().get(Assets.Musics.ESCAPE, Music.class).stop();
+                        context.getAudioManager().clear();
+                        context.getScreenTransitions().out(new EscapeSuccessfulScreen(game), 0.1f);
+                    }
+                }, EscapeSuccessfulEvent.class);
+
+                final EndgameHandler endgameHandler = new EndgameHandler(context, behavior, player, safeZone);
                 final PageHandler pageHandler = new PageHandler(context);
 
                 context.getEventManager().register(endgameHandler, EndgameEvent.class);

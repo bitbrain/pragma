@@ -1,6 +1,5 @@
 package de.bitbrain.pragma.ai;
 
-import aurelienribon.tweenengine.TweenEquation;
 import aurelienribon.tweenengine.TweenEquations;
 import de.bitbrain.braingdx.ai.pathfinding.Path;
 import de.bitbrain.braingdx.behavior.Behavior;
