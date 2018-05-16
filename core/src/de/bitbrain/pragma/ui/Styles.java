@@ -1,5 +1,6 @@
 package de.bitbrain.pragma.ui;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -18,6 +19,9 @@ public final class Styles {
 
     public static final Label.LabelStyle DIALOG_TEXT = new Label.LabelStyle();
     public static final Label.LabelStyle PAGE = new Label.LabelStyle();
+    public static final Label.LabelStyle LABEL_LOGO = new Label.LabelStyle();
+    public static final Label.LabelStyle LABEL_GAME_OVER = new Label.LabelStyle();
+    public static final Label.LabelStyle LABEL_CREDITS = new Label.LabelStyle();
 
     public static void init() {
         DIALOG_TEXT.fontColor = Colors.TEXT_SPEECH;
@@ -28,6 +32,13 @@ public final class Styles {
         patch.scale(8f, 8f);
         PAGE.background = new NinePatchDrawable(patch);
         PAGE.font = bake(Assets.Fonts.TEXT, 28);
+
+        LABEL_GAME_OVER.fontColor = Color.valueOf("ff0042");
+        LABEL_GAME_OVER.font = bake(Assets.Fonts.TEXT, (Gdx.graphics.getWidth() * Gdx.graphics.getHeight()) / 1600);
+        LABEL_LOGO.fontColor = Color.valueOf("3c00ff");
+        LABEL_LOGO.font = bake(Assets.Fonts.TEXT, (Gdx.graphics.getWidth() * Gdx.graphics.getHeight()) / 2300);
+        LABEL_CREDITS.fontColor = Color.valueOf("3c00ff");
+        LABEL_CREDITS.font = bake(Assets.Fonts.TEXT, (Gdx.graphics.getWidth() * Gdx.graphics.getHeight()) / 9300);
     }
 
     public static BitmapFont bake(String fontPath, int size) {

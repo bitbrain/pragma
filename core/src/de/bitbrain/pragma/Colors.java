@@ -8,6 +8,6 @@ import com.badlogic.gdx.graphics.Color;
 
 public interface Colors {
     Color TEXT_SPEECH = Color.valueOf("#762133");
-    Color BACKGROUND = Color.valueOf("#0c090f");
+    Color BACKGROUND = Color.valueOf("#0a090f");
     Color TEXT_PAGE = Color.valueOf("#a9a293");
 }
