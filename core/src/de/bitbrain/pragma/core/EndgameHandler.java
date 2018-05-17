@@ -55,7 +55,7 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
                         .setCallback(new TweenCallback() {
                             @Override
                             public void onEvent(int i, BaseTween<?> baseTween) {
-                                context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#ff0044"), 400f, context.getLightingManager()), devil);
+                                context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#ae0069"), 400f, context.getLightingManager()), devil);
                                 context.getParticleManager().attachEffect(Assets.Particles.AURA, devil, 32f, 32f);
                                 context.getAudioManager().spawnSound(Assets.Sounds.CREATURE, devil.getLeft(), devil.getTop(), 1f, 1f, 300f);
                                 ScreenShake.shake(5f, 2f);

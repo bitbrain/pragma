@@ -15,24 +15,25 @@ import de.bitbrain.pragma.core.CharacterType;
 
 public class CharacterInitializer {
 
-    public static void createAnimations(GameContext context, SpriteSheet sheet) {
-        Map<Integer, SpriteSheetAnimationFactory.Index> indices = createSpriteIndices();
+    public static SpriteSheetAnimation createAnimations(GameContext context, SpriteSheet sheet, CharacterType type) {
+        Map<Integer, SpriteSheetAnimationFactory.Index> indices = createSpriteIndices(type);
         SpriteSheetAnimationFactory animationFactory = new SpriteSheetAnimationFactory(sheet, indices);
+        SpriteSheetAnimation animation = null;
         for (Map.Entry<Integer, SpriteSheetAnimationFactory.Index> entry : indices.entrySet()) {
-            SpriteSheetAnimation animation = animationFactory
+            animation = animationFactory
                     .create(entry.getKey())
                     .base(0)
                     .interval(0.1f)
                     .direction(SpriteSheetAnimation.Direction.HORIZONTAL)
                     .frames(4)
                     .origin(entry.getValue().x, entry.getValue().y)
-                    .scale(1f, 2f)
                     .source(sheet);
             SpriteSheetAnimationSupplier supplier = new SpriteSheetAnimationSupplier(orientations(), animation,
                     AnimationTypes.FORWARD);
             context.getBehaviorManager().apply(supplier);
             context.getRenderManager().register(CharacterType.values()[entry.getKey()].name(), new AnimationRenderer(supplier));
         }
+        return animation;
     }
 
     private static Map<Orientation, Integer> orientations() {
@@ -44,10 +45,9 @@ public class CharacterInitializer {
         return map;
     }
 
-    private static Map<Integer, SpriteSheetAnimationFactory.Index> createSpriteIndices() {
+    private static Map<Integer, SpriteSheetAnimationFactory.Index> createSpriteIndices(CharacterType type) {
         Map<Integer, SpriteSheetAnimationFactory.Index> indices = new HashMap<Integer, SpriteSheetAnimationFactory.Index>();
-        indices.put(CharacterType.JOHN.ordinal(), new SpriteSheetAnimationFactory.Index(0, 0));
-        indices.put(CharacterType.KALMAG.ordinal(), new SpriteSheetAnimationFactory.Index(0, 4));
+        indices.put(type.ordinal(), new SpriteSheetAnimationFactory.Index(0, 0));
         return indices;
     }
 }

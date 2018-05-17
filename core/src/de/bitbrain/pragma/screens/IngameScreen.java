@@ -30,6 +30,7 @@ import de.bitbrain.pragma.Colors;
 import de.bitbrain.pragma.Config;
 import de.bitbrain.pragma.ai.DevilController;
 import de.bitbrain.pragma.core.CameraController;
+import de.bitbrain.pragma.core.CharacterType;
 import de.bitbrain.pragma.core.LevelLoader;
 import de.bitbrain.pragma.events.GameOverEvent;
 import de.bitbrain.pragma.events.SayEvent;
@@ -66,9 +67,13 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         TiledMap map = SharedAssetManager.getInstance().get(Assets.TiledMaps.INTRO, TiledMap.class);
         context.getTiledMapManager().load(map, context.getGameCamera().getInternal(), TiledMapType.ORTHOGONAL);
 
-        final Texture texture = SharedAssetManager.getInstance().get(Assets.Textures.PLAYER_TILESET);
-        SpriteSheet sheet = new SpriteSheet(texture, 4, 8);
-        CharacterInitializer.createAnimations(context, sheet);
+        final Texture johnTexture = SharedAssetManager.getInstance().get(Assets.Textures.PLAYER_TILESET);
+        SpriteSheet johnSheet = new SpriteSheet(johnTexture, 4, 4);
+        CharacterInitializer.createAnimations(context, johnSheet, CharacterType.JOHN).scale(1, 2f);
+
+        final Texture demonTexture = SharedAssetManager.getInstance().get(Assets.Textures.KALMAG_TILESET);
+        SpriteSheet demonSheet = new SpriteSheet(demonTexture, 8, 4);
+        CharacterInitializer.createAnimations(context, demonSheet, CharacterType.KALMAG).scale(1, 2f);
 
         Vignette vignette = new Vignette(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
         vignette.setLutIntensity(0.7f);
