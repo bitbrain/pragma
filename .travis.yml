@@ -11,7 +11,7 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-script: ./gradlew desktop:dist
+script: chmod +x gradlew && ./gradlew desktop:dist
 
 after_script:
   chmod +x deploy-desktop.sh && ./deploy-desktop.sh
