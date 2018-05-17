@@ -6,12 +6,15 @@ jdk:
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 
+install:
+   - gradle assemble
+
 cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-script: gradle asseble && gradle desktop:dist
+script: gradle desktop:dist
 
 after_script:
   chmod +x deploy-desktop.sh && ./deploy-desktop.sh
