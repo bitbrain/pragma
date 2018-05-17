@@ -18,6 +18,7 @@ import de.bitbrain.braingdx.postprocessing.effects.Vignette;
 import de.bitbrain.braingdx.screens.AbstractScreen;
 import de.bitbrain.braingdx.tweens.ActorTween;
 import de.bitbrain.pragma.Colors;
+import de.bitbrain.pragma.Config;
 import de.bitbrain.pragma.ui.Styles;
 
 public class GameOverScreen extends AbstractScreen<BrainGdxGame> {
@@ -58,7 +59,11 @@ public class GameOverScreen extends AbstractScreen<BrainGdxGame> {
                 .setCallback(new TweenCallback() {
                     @Override
                     public void onEvent(int i, BaseTween<?> baseTween) {
-                        context.getScreenTransitions().out(new MenuScreen(getGame()), 1f);
+                        if (Config.DEBUG) {
+                            context.getScreenTransitions().out(new IngameScreen(getGame()), 1f);
+                        } else {
+                            context.getScreenTransitions().out(new MenuScreen(getGame()), 1f);
+                        }
                     }
                 })
                 .start(context.getTweenManager());

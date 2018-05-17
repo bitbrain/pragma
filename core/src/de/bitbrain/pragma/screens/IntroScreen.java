@@ -56,7 +56,7 @@ public class IntroScreen extends AbstractScreen<BrainGdxGame> {
                     }
                 })
                 .start(SharedTweenManager.getInstance());
-        SharedAssetManager.getInstance().get(Assets.Sounds.BITBRAIN, Sound.class).play(0.5f);
+        SharedAssetManager.getInstance().get(Assets.Sounds.BITBRAIN, Sound.class).play(0.1f, 1.6f, 1f);
     }
 
     @Override

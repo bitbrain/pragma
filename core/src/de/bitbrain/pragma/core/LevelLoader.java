@@ -144,7 +144,7 @@ public class LevelLoader {
                         .rasterSize(context.getTiledMapManager().getAPI().getCellWidth(), context.getTiledMapManager().getAPI().getCellHeight());
                 context.getBehaviorManager().apply(behavior, player);
 
-                context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#333333"), 180f, context.getLightingManager()), player);
+                context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#181818"), 150f, context.getLightingManager()), player);
 
                 // Stick player to field to avoid collision issues
                 TiledMapAPI api = context.getTiledMapManager().getAPI();
