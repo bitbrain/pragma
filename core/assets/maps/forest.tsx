@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tileset SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<tileset name="forest" tilewidth="16" tileheight="16" tilecount="280" columns="20">
- <image source="forest.png" width="320" height="224"/>
+<tileset name="forest" tilewidth="16" tileheight="16" tilecount="560" columns="20">
+ <image source="forest.png" width="320" height="448"/>
  <tile id="52">
   <properties>
    <property name="collision" value="true"/>
@@ -127,6 +127,16 @@
    <property name="collision" value="true"/>
   </properties>
  </tile>
+ <tile id="253">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="254">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
  <tile id="269">
   <properties>
    <property name="collision" value="false"/>
@@ -135,6 +145,86 @@
  <tile id="270">
   <properties>
    <property name="collision" value="false"/>
+  </properties>
+ </tile>
+ <tile id="360">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="361">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="362">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="363">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="364">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="365">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="366">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="367">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="380">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="381">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="382">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="383">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="384">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="385">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="386">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="387">
+  <properties>
+   <property name="collision" value="true"/>
   </properties>
  </tile>
 </tileset>
