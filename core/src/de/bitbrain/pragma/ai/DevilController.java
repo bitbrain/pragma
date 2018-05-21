@@ -26,7 +26,7 @@ public class DevilController {
         private boolean gameOver = false;
         @Override
         public void update(GameObject source, float delta) {
-            if (!gameOver && path != null && path.getLength() <= 2) {
+            if (!gameOver && path != null && path.getLength() <= 3) {
                 gameOver = true;
                 eventManager.publish(new GameOverEvent());
             }

@@ -227,4 +227,74 @@
    <property name="collision" value="true"/>
   </properties>
  </tile>
+ <tile id="460">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="461">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="462">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="463">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="480">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="483">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="500">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="503">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="520">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="523">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="540">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
+ <tile id="541">
+  <properties>
+   <property name="collision" value=""/>
+  </properties>
+ </tile>
+ <tile id="542">
+  <properties>
+   <property name="collision" value=""/>
+  </properties>
+ </tile>
+ <tile id="543">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+ </tile>
 </tileset>
