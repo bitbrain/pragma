@@ -1749,22 +1749,22 @@
  </tile>
  <tile id="349">
   <properties>
-   <property name="collision" value="false"/>
+   <property name="collision" value="true"/>
   </properties>
  </tile>
  <tile id="350">
   <properties>
-   <property name="collision" value="false"/>
+   <property name="collision" value="true"/>
   </properties>
  </tile>
  <tile id="351">
   <properties>
-   <property name="collision" value="false"/>
+   <property name="collision" value="true"/>
   </properties>
  </tile>
  <tile id="352">
   <properties>
-   <property name="collision" value="false"/>
+   <property name="collision" value="true"/>
   </properties>
  </tile>
  <tile id="353">
