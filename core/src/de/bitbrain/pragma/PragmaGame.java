@@ -23,7 +23,7 @@ public class PragmaGame extends BrainGdxGame {
         Gdx.graphics.setWindowedMode(Gdx.graphics.getDisplayMode().width, Gdx.graphics.getDisplayMode().height);
 
         if (!Config.DEBUG) {
-            //Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+            Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
             return new IntroScreen(this);
         }
         return new IngameScreen(this);

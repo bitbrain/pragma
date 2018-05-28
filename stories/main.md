@@ -1,27 +1,33 @@
-# Pragma (German)
+# Pragma
 
-> Ein Spiel über Trauer, Einsamkeit und Glück.
+> a game about finding a missing person.
 
-## Prolog
+## The Experiment
 
-Schon als Kind hat mich meine Mutter immer in den Wald ausgeführt. Besonders im Sommer durfte ich die bunten Blätter beobachten, wie sie mit den Vögeln fröhlich im Wind tanzten. Jetzt ist es ganz still und ich fühle, wie die eiskalte Luft durch meine Lungen wandert. Das Schlucken fällt mir immer schwerer doch ich zwinge mich, nicht stehen  zu bleiben. Das blaue Mondlicht schimmert auf einen dunklen Pfad, welcher sich vor mir auftut. Ich steige immer tiefer in das Geäst und mit mir gehen alle Ängste, Träume und Hoffnungen.
+### Page 1
 
-Heute ist es endlich soweit. Heute besuche ich dich.
+In the far woods, a life can be given in exchange for a soul.
 
-## Kapitel 1: Die Lichtung
+### Page 2
 
-Die Sonne legt sich auf das Land und die Abenddämmerung kündigt den nächsten Vollmond an. Ich verlasse mein Auto und blicke mich entschlossen um. Am Rande des einsamen Parkplatzes befindet eine kleine Anzeigetafel, die wohl einst für vorbeikommende Wanderer gedacht war. Als ich näher trete bemerke ich, dass die Schrift der Wegbeschreibung bereits ganz verwaschen war. Kurz überblicke ich die Tafel und mache mir eine Notiz: die erste Gabelung links, danach rechts, dann wieder zweimal links und dann sollte ich zur Lichtung kommen. Als Kind bin ich sehr oft hier gewesen. Besonders gefielen mir die warmen Sommertage, die wir meist hier auf dem Land verbrachten.
+The ritual must be prepared. On the first full moon, blood must be the answer.
 
-...
+### Page 3
 
-## Kapitel 2: Das Haus
+The ritual requires fresh blood and warm flesh but not a corpse.
 
-...
+### Page 4
 
-## Kapitel 3: Das Erwachen
+Shred the skin, break the bones. Only dedication can open the gate.
 
-...
+### Page 5
 
-## Kapitel 4: Dämmerung
+The sacrifice will call him. He is the one who can give life.
 
-...
+### Page 6
+
+Kalmag is calling for a sacrifice...
+
+### Page 7
+
+Help me.
