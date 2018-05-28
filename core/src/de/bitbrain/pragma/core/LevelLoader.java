@@ -37,6 +37,7 @@ import de.bitbrain.pragma.events.GameOverEvent;
 import de.bitbrain.pragma.events.ShowPageEvent;
 import de.bitbrain.pragma.screens.EscapeSuccessfulScreen;
 import de.bitbrain.pragma.screens.GameOverScreen;
+import de.bitbrain.pragma.ui.PageCounter;
 import de.bitbrain.pragma.ui.PageHandler;
 
 public class LevelLoader {
@@ -69,6 +70,7 @@ public class LevelLoader {
                 context.getTiledMapManager().getAPI().setDebug(Config.DEBUG);
                 context.getTiledMapManager().load(map, context.getGameCamera().getInternal(), TiledMapType.ORTHOGONAL);
                 player = null;
+                int totalPages = 0;
                 for (GameObject o : context.getGameWorld()) {
                     if (CharacterType.JOHN.name().equals(o.getType())) {
                         player = o;
@@ -96,6 +98,7 @@ public class LevelLoader {
                     }
                     if ("page".equals(o.getType())) {
                         o.setDimensions(16f, 16f);
+                        totalPages++;
                     }
                     if ("car_light_front".equals(o.getType())) {
                         Color color = Color.valueOf("ffecac");
@@ -116,6 +119,13 @@ public class LevelLoader {
 
                 if (player == null) {
                     throw new GdxRuntimeException("No player initialised! Create an object of type '" + CharacterType.JOHN.name() + "'");
+                }
+
+                if (totalPages > 0) {
+                    PageCounter counterUi = new PageCounter(totalPages);
+                    context.getEventManager().register(counterUi, ShowPageEvent.class);
+                    context.getStage().addActor(counterUi);
+                    counterUi.setPosition(Gdx.graphics.getHeight() / 12f, Gdx.graphics.getHeight() / 12f);
                 }
 
                 // FOOTSTEPS
