@@ -37,7 +37,7 @@ public class MenuScreen extends AbstractScreen<BrainGdxGame> {
     protected void onCreate(GameContext context) {
         setBackgroundColor(Colors.BACKGROUND);
         this.context = context;
-        context.getScreenTransitions().in(3.5f);
+        context.getScreenTransitions().in(1.5f);
 
         Vignette vignette = new Vignette(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
         vignette.setLutIntensity(0.7f);
@@ -59,22 +59,22 @@ public class MenuScreen extends AbstractScreen<BrainGdxGame> {
         context.getStage().addActor(layout);
 
         pressAnyButton.getColor().a = 0f;
-        Tween.to(pressAnyButton, ActorTween.ALPHA, 5f).target(1f).delay(2f)
+        Tween.to(pressAnyButton, ActorTween.ALPHA, 3f).target(1f).delay(2f)
                 .ease(TweenEquations.easeInCubic)
                 .start(context.getTweenManager());
 
-        Tween.to(credits, ActorTween.ALPHA, 4f).target(0.2f).delay(3f)
+        Tween.to(credits, ActorTween.ALPHA, 3f).target(0.2f).delay(3f)
                 .ease(TweenEquations.easeInCubic)
                 .start(context.getTweenManager());
 
-        Tween.to(pressAnyButton, ActorTween.ALPHA, 1f).target(1f).delay(6f)
+        Tween.to(pressAnyButton, ActorTween.ALPHA, 1f).target(1f).delay(3f)
                 .target(1f)
                 .ease(TweenEquations.easeInCubic)
                 .repeatYoyo(Tween.INFINITY, 0f)
                 .start(context.getTweenManager());
 
         logo.getColor().a = 0f;
-        Tween.to(logo, ActorTween.ALPHA, 5f).target(1f).delay(2f)
+        Tween.to(logo, ActorTween.ALPHA, 3f).target(1f).delay(0f)
                 .ease(TweenEquations.easeInCubic)
                 .start(context.getTweenManager());
 
@@ -88,7 +88,7 @@ public class MenuScreen extends AbstractScreen<BrainGdxGame> {
     protected void onUpdate(float delta) {
         if (!exiting && (Gdx.input.isTouched() || Gdx.input.isKeyJustPressed(Input.Keys.ANY_KEY))) {
             exiting = true;
-            context.getScreenTransitions().out(new IngameScreen(getGame()), 1f);
+            context.getScreenTransitions().out(new StoryScreen(getGame()), 1f);
         }
     }
 }
