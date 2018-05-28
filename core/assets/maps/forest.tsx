@@ -194,7 +194,7 @@
  </tile>
  <tile id="38">
   <properties>
-   <property name="collision" value="false"/>
+   <property name="collision" value="true"/>
   </properties>
  </tile>
  <tile id="39">

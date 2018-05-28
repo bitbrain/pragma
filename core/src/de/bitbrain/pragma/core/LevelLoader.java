@@ -84,6 +84,9 @@ public class LevelLoader {
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
                     }
+                    if ("blue_glimmer".equals(o.getType())) {
+                        context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 80f, new Color(0f, 0f, 1f, 0.3f));
+                    }
                     if ("event".equals(o.getType())) {
                         MapProperties mapProperties = (MapProperties)o.getAttribute(MapProperties.class);
                         if (mapProperties.containsKey("safezone")) {

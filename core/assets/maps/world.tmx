@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="111">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="139">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="80" height="80">
   <data encoding="base64" compression="zlib">
-   eJzVmWty2zgQhGGb0e4FYle8uUAoXsER7n+qFavU5VarZwB6IxH7YwoiCFJU88O8dCylLGebxY6X+Z5x6rx+Xfd0tu9ne72MT2TPl/lXuu50tnoxrBlpPF1+L57THbsROk2d6zGyZt/FXklDvo6vfR1sPBbPy1w8b8zXZM63xkk0fKbnYXum66DfUvbnrYe/epnTY103metaI3gFc7x/VUdcx3t4b956+cN85M8ms77FHbRjf8j7V3V8pvXM4Ajc9fCX+bUpmHfjVDzXM92HmWR/6PbBcrFR+ZvLNX8ujm7hzvnVWc5ncRvz0LyWTxb35jGKv3hOff9b/B7W4ftq8Vzz97n7aG7E/nC1kfhTDrbyNxnD97lzS/D9kXE8xrg3f1WeEefhv/lZnd9jPdw69mXKjubeqo36kZNZszd/7GdYu1f6rP5MGcr8Hr4P9+bcu4rhGtxnMWtGiLvKH/yM1lGc5zrOWvFZ6zXO69x9WLsnOTdCvM34Y/a0xoL/2hp3+XrmOeJW67W9+drCn9YC6vdraXOn/Gk+xzpm19cyBl9b+EMNwL83y8d66g2uJSIW9fqR692MP7xz56ecVXO9rnd6ORZdvwUajsBZD39ZvqfziJ9Z3MV5p5djUf0ga7g3Z738uXpT69fZzEf5ofLKmjkN/28cZv6N/RzXCjhWPziVW/83Fc8pPwPrmHE4Am8t/lr9Ps7/+LzqpTw6v8l1L3Ooz8PxZG/eeviL+iFRHHF1SMYfjrW/wwy6eFzL/rz18Mdcwc9xnVrLtZ9UP6icRX5S+WYGo32xN29b/J/q5voyGm976uGv9K9H7j/z+2XeMO/6SC2/l8VlvBO3rtUPXG0E7jA6P6ZaZf4xygP1/xP+r9Plk+oP3fkR+n0Rf1vripbmET+4vzvv+tKjx2HH1ZY+y1f+D2H+NK/M6uwR43BUf7T6LewHe/uBU/Ec8/dm/PE4Sj0S1b9ZfNT6JIu72f8iXMf0/O8yYl0cxd+IN+ZO+eO6JIrXWZ7YWo9xpLq45f+Yi+h/ulZczfo6LWvlg9BwFP6Uh1Z8VF4zv8m5pdbFzv+28oEROHR9Ppf38bHzV5OMPXFa+zXsJ5XrHg73zv/wXiPuNK9zdUgWj6O4q1y6fNv1f3BfjsmP5tDFRxcHIx51PvNbms9pPui4Y2178k3ouAd/Gj8rfc76M7V43nR0vGo/R/V0+YDjm/WDho+oU9z75Hib+cEsT4v40z2a9X2yOMz75Cjn+fje/Rr3PjW/y/KyLfw5vt336r51z6f+k+PJqdzu53v5xSheOj56/FlWf7T6K5x/znKNywvAZU/fAjr+af6i/CqrA3rrBB5Zi1ri35n5PR3VV3Jcr+Wz58AaPqL/HPGn/PTyx5y0/KbqkeV90EdznpPYqtu9/F+rXnD7wsXfY3CfVl6pHKp+yrnbzye5Lz4/Kv+L+ifuWbfE356+jHId8ce8K1tOu0fnf64fUks7vkbnJxl788PW+mO51Uv13LP/4uJaxk/mxzL/1VMf66jxYMT+M/tjHLfyNXd9VgfzOHVep9rt3Xdu8ee4yvyg4yjjSfnM6tsRuYv4g3a9eZ27Xvt77nwPhzgekbuo/6d16lb/xX08nY/up/N6PCJ3yh/Xkzh28bjFXcRTD3fueK+4+tX+C+dhPXGRtdF5vY+uj/oq6vdW7fbmLBqjfC/zR26+18/1xuNR4+2f4i86z+b6iq26GfcdNd46/8ecOP70WLniY9YOn7P6ObrP6NxF9a/jL6tno3WLmc/8oN5ndL+n8Vfrji1xl49nuQ/v5+y6aNybr631h8bNnjqD/VvkLxdZ1+rLqD/Ym7Me/mq5zp1bdYjzg5mxHhGXOla6bgTeWvXHfzGNG8r1LPMat6O62mm52mj8bdWr0m8+0e/SeMR9vUnWMJfZ/z+cz6iOsD35498T9Z1ZC5fHKXtZ/J7NcW/drTqynnv7v54x45E55Ou0HtE9nb277HnYR6+2d/xt9X+j/E7rDt3LGt9dfeLGLP4z//xeRuQP+wbPW+U8NNH8jucXOXb73fHlnsf9/8x9GvzGEfhjn3M0FnH4Fcv4Ux8d+UWOJffmL/rdrA+/22i+tx/t6mSej+LVRJ+xTr/PxedH8BeZ9s4XmcuY7LFJRu7RaEzp4c/F50f4v8yqsY+z/S63736rTfIZx5pza/7I9bXjnjW8N38fG4w1O1yM51/o/HI5dvrX8slTJS1YHzWXH0Z9RH739+bvh9i3ix2Sczh/kOM3em783pdyvWddDj7T+ROdX+R+WpdH9TnH4Xvzx7//m9EJ9tfZ/qa173LdodzmZm+kqYsJtXzGWN7Xyprzezo6//eI/I+1cbxBn39o3aF4TZHjqV7Y/06HSp9PcozPtVxzWeU7atmXv1Wbn+WWReUL6zD3+2I4/9LQj43jxEf59ImcQ6l/i/a+Wi9/v4zNHdcpf+r3VgNbbp++0zo+/yb6qWbcN9BzWtdU0ULrEY7X6g85hkXc/JJnmkm/r/g/3q/MWuYLVb8jaQH9WEf8djw36+rqj4g/nnf5IOddUT3M36v8Most/hxn73SsvpH3O69jDaEjns/tX9aL8xfmLdubrs5x86tFeRtrx58/yu2ejvjLOPshWjGfyG+cftwrYL34cy3X+UotffxlfRruJ7biMPJWrVsjn5rlf/BnGn/fyTDHvDr94H+4n6KxQmuEnligfs/FkFpu65p1LvJf0BCmeRE+Z35UtToYw3nlkddoDsMscK8AeYz6+VZ/T/uIUX6o/YrMf0E/jPwuHIsZf5kxo4dkDTSEXpV0Yia5F1BL7M+UNV2n/8No7dYbRyP9oCH4dNf/C93z8NA=
-  </data>
- </layer>
- <layer name="divisions" width="80" height="80" visible="0">
-  <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="base1" width="80" height="80">
@@ -17,7 +12,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1slNw0AYhuFxFRQAVAI9QA/soQC4IxAdBAgd5EAJOcCFfTuzLyaQAvJZOGIymngJRLLN+0ifMpa3+Lf9j40BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAlS0rSxl/V5Sas/+CspjjGL85V9EdKyfKqXLmrLtRbj37nCsXyqVyNdJ/V3x3yr3yoDw6696V0FreCYxpKE8aPysvyqvnmDVtsxr8LCfdozL60LW1lU/lyxq3rfGushf0b9tRQmtdI0g/VyTpHkXKWN8pZTrH2OcgY/3SpNW3iIap34bqtalsKdvKYcI76vbIcWVCmbSO577nZTKjzOYYR+rWte5r3LSW3WcorUeW3Zwyn2McCZ1e2Bzi2Sljr/NZU9ZzjH3qGernvqNl7HWjEnrm4Gsz+LsR33NIb/6IuHPwm+n/bvTNG/9ZS/Ua0+9RXLfeHJw0l1al5/2FMP7m7sS1amXogfS8wXw9sOq6gxyLWw==
+   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
   </data>
  </layer>
  <layer name="base2" width="80" height="80">
@@ -25,12 +20,12 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt08kJwDAMRUFXk3s2d5C1/4LyiwgYmxl4VyEEKgUAAAAAAAAAAAAAAAAAAAAAAAAAAGBMU+sFoHNzWtKatrSn2miXHv/5SGe60p2e9P40u8d7AACM7AO+RQNV
+   eJzt2FFOAjEQBuByGd8R5QYqGg+hd9Aj6aH0DnIF5gESQgxB2Xan7Pclf7JPMO12Sksp9Oor8r19fpmV8jobs5pcdZziJ7LePr9Fze+N6j42Ry3rqGF/TdbS+xwds78mAQBO9RH5LMOexVqc67IZ8izmXHe+nu6Wmex6d3dvmmIvn+Owd/Xy31zKfGXcf2r0cq1xZvzfpsbazDjOFjL2R0+yrJspvccaY83yHluY0lgBAAAAAAAAAKAnz2MXAEBV9nmAPtiv4Xd6A4Ch1fhtuWrwHXDJ5pHryCJyE7mNLEeq5bCfe3AXuY88RFaRx8jTQJ/d43wAQO/+c59wB5mODbqgMPk=
   </data>
  </layer>
  <layer name="mountains" width="80" height="80">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <objectgroup name="spawn">
@@ -53,7 +48,7 @@
    </properties>
    <point/>
   </object>
-  <object id="106" name="Page 1" type="page" x="648.5" y="744.833">
+  <object id="106" name="Page 1" type="page" x="40.8333" y="431.833">
    <properties>
     <property name="caption" value="Page 5"/>
     <property name="producer" value="JOHN"/>
@@ -61,7 +56,7 @@
    </properties>
    <point/>
   </object>
-  <object id="107" name="Page 4" type="page" x="204.083" y="329.833">
+  <object id="107" name="Page 4" type="page" x="108.083" y="223.166">
    <properties>
     <property name="caption" value="Page 4"/>
     <property name="producer" value="JOHN"/>
@@ -103,7 +98,7 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="54" type="event" x="403.917" y="627.667" width="222.833" height="179.333">
+  <object id="54" type="event" x="371.917" y="158.667" width="222.833" height="179.333">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
@@ -111,15 +106,7 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="55" type="event" x="166.584" y="618.667" width="75.5" height="208.333">
-   <properties>
-    <property name="collision" type="bool" value="false"/>
-    <property name="producer" value="JOHN"/>
-    <property name="say" value="What is this smell?"/>
-    <property name="sticky" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="56" type="event" x="135.584" y="333.833" width="190.333" height="167.333">
+  <object id="56" type="event" x="36.584" y="122.833" width="162.333" height="136.333">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
@@ -189,6 +176,144 @@
     <property name="safezone" value="true"/>
    </properties>
   </object>
+  <object id="116" name="Blue Glim Light" type="blue_glimmer" x="729.333" y="1178">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="117" name="Blue Glim Light" type="blue_glimmer" x="857.667" y="1256">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="118" name="Blue Glim Light" type="blue_glimmer" x="808" y="1019">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="119" name="Blue Glim Light" type="blue_glimmer" x="728.667" y="969.333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="120" name="Blue Glim Light" type="blue_glimmer" x="472.333" y="937.667">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="121" name="Blue Glim Light" type="blue_glimmer" x="377.333" y="824.667">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="122" name="Blue Glim Light" type="blue_glimmer" x="185.091" y="1096.73">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="123" name="Blue Glim Light" type="blue_glimmer" x="26" y="904">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="124" name="Blue Glim Light" type="blue_glimmer" x="664.667" y="810">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="125" name="Blue Glim Light" type="blue_glimmer" x="426" y="696.667">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="126" name="Blue Glim Light" type="blue_glimmer" x="248" y="743.333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="127" name="Blue Glim Light" type="blue_glimmer" x="694.667" y="600">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="128" name="Blue Glim Light" type="blue_glimmer" x="828.667" y="537.333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="129" name="Blue Glim Light" type="blue_glimmer" x="168.667" y="538">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="130" name="Blue Glim Light" type="blue_glimmer" x="58" y="459.333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="131" name="Blue Glim Light" type="blue_glimmer" x="184" y="104">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="132" name="Blue Glim Light" type="blue_glimmer" x="381.333" y="215.333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="133" name="Blue Glim Light" type="blue_glimmer" x="186" y="5.33333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="134" name="Blue Glim Light" type="blue_glimmer" x="25.3333" y="54.6667">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="135" name="Blue Glim Light" type="blue_glimmer" x="679.333" y="137.333">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="136" name="Blue Glim Light" type="blue_glimmer" x="345" y="649">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="137" name="Blue Glim Light" type="blue_glimmer" x="1031" y="263">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="138" name="Blue Glim Light" type="blue_glimmer" x="1242.5" y="106">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup name="lights">
   <object id="38" name="Car light front" type="car_light_front" x="109.75" y="1145.13">
@@ -209,31 +334,31 @@
    </properties>
    <point/>
   </object>
-  <object id="57" name="Blood Light" type="blood_light" x="503.333" y="662">
+  <object id="57" name="Blood Light" type="blood_light" x="426.333" y="203">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
-  <object id="59" name="Blood Light" type="blood_light" x="593.333" y="781.667">
+  <object id="59" name="Blood Light" type="blood_light" x="555.333" y="304.667">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
-  <object id="60" name="Blood Light" type="blood_light" x="191" y="460">
+  <object id="60" name="Blood Light" type="blood_light" x="1241" y="523">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
-  <object id="61" name="Blood Light" type="blood_light" x="256" y="430.25">
+  <object id="61" name="Blood Light" type="blood_light" x="618" y="88.25">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
-  <object id="62" name="Blood Light" type="blood_light" x="487" y="222">
+  <object id="62" name="Blood Light" type="blood_light" x="138" y="189">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
@@ -269,7 +394,7 @@
    </properties>
    <point/>
   </object>
-  <object id="75" name="Blood Light" type="blood_light" x="1244" y="710">
+  <object id="75" name="Blood Light" type="blood_light" x="1240" y="774">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
@@ -305,6 +430,36 @@
    </properties>
    <point/>
   </object>
+  <object id="111" name="Blue Glim Light" type="blue_glimmer" x="72" y="1017.33">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="112" name="Blue Glim Light" type="blue_glimmer" x="425.667" y="1177.33">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="113" name="Blue Glim Light" type="blue_glimmer" x="391" y="1256.67">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="114" name="Blue Glim Light" type="blue_glimmer" x="598.667" y="1257">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="115" name="Blue Glim Light" type="blue_glimmer" x="582.667" y="1097.33">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup name="audio">
   <object id="43" name="Engine Sound" type="engine_sound" x="72.273" y="1141.64">
@@ -313,17 +468,17 @@
  </objectgroup>
  <layer name="overlay1" width="80" height="80">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="overlay2" width="80" height="80">
   <data encoding="base64" compression="zlib">
-   eJzt1kdOAzEYQOHJBeAOcAdyB7gDnIUS+pYeyhZI6Ft6PRNseJuRLMueCCUKCbxPepuRbI1+y5KLQpIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZLUC5/09ds/0SezNEfztBB8X6FVWqP1aE2DFmmJlhN7jtSKYrTW+38dRBu0SVu0HXzfpwM6pKNozQ7t0h41E3uOMbvxYH65M/oLjumETqkVfL+kK7qmm2hNm87onC4Se04wu3owv9wZlfd8mOd7S3d0Tw/B91d6o3f6iNY80hM900tiz0lmNxXML3dG5T3Pzfe/mmYmM8H8cmdU3vPcfFWtvOe5+apafM/1M/E9V/W7UZ1VvRvVWerdOMzvu35LvRt933XH9113fN9JGhTfKbtPuQ==
+   eJztnFeOFDEQhnsuQLgC4QqEKxCuACcBibDkF5AICwvsKzm+kuOZCBL/CrXGNO1yKrurpuuTfmm1o7G7yy67qmRP18nhLnQPug9tTvsoJKeg09CZxO+tQeeg89AF7ocCL6CX0CvodYX2p2Ydug3dgTYqtP8F+gp9g74XtnURugRdhq4UtsXFE+gp9Ax6PvGzhJC4FnyAPkKfoM8TP0uIVV8LasO5FhhGbWrHFhz8gn437C/FJrVjCw52LLpu56Jdfyk2CcUWNeMhapzdfvfAdnsb2i8l3grFFrHx0AnoZOJzUuPs9nsAtjvY0H6c8VZsPHQVupbYNjXObr9HYLujDe3HSc14iBrnGv1KzM00ITE304TlZmVYbmYYSx44f2vIAyWjIQ+UjKYas0TGYmHz6TLMp8uYwqd/QD8b9VUbKr+lfLvE77ctum670lpDCpRvj30Wa9NdsN3uGdiP8u2xz2LX0n2w3f4Z2I/y7eFnW/Mtdi09BNsdnoH9QgznW05NWNNewh3rcezdmvYS7lgvZr6FxkzTXjJFrBcaM017yRRnhEJjZnsJjaZzXXNBcs3DPf97lrFdzneWXPO4Dt2AbkK3GNtNfWdqHCXXMbfq/Q+hR9DjyO/EzK3Ud6bGsdWamuMzb6C30DvofeR3YuZW6jvnjCM3rdaJGv6UM47cxLwXx7q+qjFKzHtJ3sskMpxvkvcyiXDUnOaMzbcyas83yblVa3JsYfvRkhxb2PqwJMcWth8tMVuEqVWvMgwJ2Pwuo1Y9di5IqONpRkIdz5iWTca23DxujbHdMVrfaffR3yPLvdu47vy94fl/DVrfaffR3yPTdrex9Z32ENruNra+0x6C+25j7bOPku60+/IAak0M1f80nX0sxZcHUGtiqP43PPu4yrmaLw+g1sRQ/W949tE3Rr2fa7avLw+g1sRQ/W949tE3Rr2fWy78L8dgk+OO/Xxj1Pu55cJ59H5O5cJScg2JxJxxlpJrSGTo52NIyzVqw/07QW6u0cdNqwx3Li0p12jBWNzoi+9sb/ifsbjRF9+l7A1z/v0wX3yXsjdoq7Fx4ovvUupQ2mpsLUjZG+z3wwzjL38AbyOgsw==
   </data>
  </layer>
  <layer name="overlay3" width="80" height="80">
   <data encoding="base64" compression="zlib">
-   eJzt0stNAgEUhtGZBrQH7EHqQ0VsAEGlAXkIDSD4qAo3/ombyeyGhZOBc5Jvdxc3N7coAAAAAAAAAAAAAAAAAAAAAAAAAACA/zRIN+k23aVhuk+j9NDiXl0xTo9pkqbpKT2nlzRrca+ueE3ztEjLtEpvaZ02lbn6n/Jnm97TLu3TR/pMX+m7Mlf/U5qp/ynN1P8U4Bwc0k/bS3TYRVkUl2XbW3RXL7e7cr+jXed2/RO43y8AKyEj
+   eJztm2duxSAMx/Mu0HWEjit0XKHjUN29QHcv0N0LdPdUHVLdD5EogsRgeDHJ/ydZehIJYDA2+JGq+s9axeeT5KuhfHZUVXMjXl3r9NxGw7NtbZnMtJQvUzsrnrba+pGSCWpnsqGtRSpbcpSHjIXdVsj8+hjnGDXRZl+rf/o6ytvGPaatcWHPX4wt1Pjsq42YsYhtKzcxtlDjs682YsYitq3cSNZFrC/SOhYxuGwhhY8OQeJDukaDLUh8SJektrPY+rTE1lLhxJPca7zvPiT3Gk9Zv2QuUs2jXU+KNd7kXzj1f5P8MNqRzEWqebTPa5w1Xj/L1dOEU/8UlU8zdJPMdapYYNcTsk/g6mnCqX+eyhcY9UrOSpJ3TbuR1MPVs4a7b2jK25hI9oSSd027kdTD1dOHb/1rydv4CLWbP1y6SvWMWf8aiLGbHLrGzKMGYuwmh67S9V8SOXTV7udSMiRd+0jMXn2caO+f9litvX8h8auLHI/2vURI/ArJDaQaa+17iZD4FZIbSJWH6VN8DTnT58zJa48pPkLO9PVY79LvPZJ9koNE/dAeU0xi/Vg91qf0+4zknOQiUZ+0xxQTqR+7JbkjuSd5SNQn7THFROrHXkneSN5JPhL1qaSYovXeTimExIyS/0PVQKn3MLSAexgy4Cv9cPbBGu5yaSXHPnhI5NgHD4kc+2DQTKl5Ei2UlCfRSEl5Eo2UlCfRCDdPAj/Jx5VjgJ/k48oxwE/yceUY4Cf5uHIMJeWTu4abY0BMkYGYIgMxRQZiigzEFDBONkm2SLZJdjruS4kckhyRHJOcdNyXErkkuSK5JrnpuC8l8kjyRPJM8tJtVwAAAAAAQCD2WSzHNwx9xj6L4e5WGPZZzHd3CzkDN/ZZzHd3CzkDGcgZyEDOAAAwRPCtlwx86yUD33rJ6Mu3Xr+KiZ9N
   </data>
  </layer>
  <layer name="overlay4" width="80" height="80">
