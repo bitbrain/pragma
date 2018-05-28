@@ -12,6 +12,7 @@ public interface Assets {
         String BITBRAIN_LOGO = "textures/bitbrain.png";
         String PAGE = "textures/page.png";
         String PAGE_NINEPATCH = "textures/page.9.png";
+        String MOUNTAINS_01 = "textures/mountains-01.png";
     }
 
     interface Fonts {

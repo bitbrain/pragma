@@ -13,12 +13,14 @@ import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.audio.AudioManager;
 import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
+import de.bitbrain.braingdx.graphics.renderer.SpriteRenderer;
 import de.bitbrain.braingdx.postprocessing.effects.Bloom;
 import de.bitbrain.braingdx.postprocessing.effects.Vignette;
 import de.bitbrain.braingdx.screens.AbstractScreen;
 import de.bitbrain.braingdx.tweens.ActorTween;
 import de.bitbrain.braingdx.tweens.GameObjectTween;
 import de.bitbrain.braingdx.tweens.SharedTweenManager;
+import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Colors;
 import de.bitbrain.pragma.ui.Styles;
@@ -51,7 +53,7 @@ public class MenuScreen extends AbstractScreen<BrainGdxGame> {
         layout.add(logo).row();
 
         Label pressAnyButton = new Label("press any key", Styles.DIALOG_TEXT);
-        layout.add(pressAnyButton).padTop(Gdx.graphics.getHeight() / 10f).row();
+        layout.add(pressAnyButton).padTop(Gdx.graphics.getHeight() / 6f).row();
 
         Label credits = new Label("coding @ bitbrain - audio @ k0stnix", Styles.LABEL_CREDITS);
         credits.getColor().a = 0f;
@@ -82,6 +84,11 @@ public class MenuScreen extends AbstractScreen<BrainGdxGame> {
         bloom.setBlurPasses(40);
         bloom.setBloomIntesity(0.7f);
         context.getRenderPipeline().getPipe(RenderPipeIds.UI).addEffects(bloom);
+
+        GameObject background = context.getGameWorld().addObject();
+        background.setDimensions(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        background.setType("background-01");
+        context.getRenderManager().register("background-01", new SpriteRenderer(Assets.Textures.MOUNTAINS_01));
     }
 
     @Override
