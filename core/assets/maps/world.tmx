@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="150">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="154">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="80" height="80">
   <data encoding="base64" compression="zlib">
@@ -99,6 +99,9 @@
     <property name="producer" value="JOHN"/>
     <property name="text" value="Help me!"/>
    </properties>
+   <point/>
+  </object>
+  <object id="150" name="Dog" type="DOG" x="42" y="1257">
    <point/>
   </object>
  </objectgroup>
@@ -208,7 +211,7 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="108" type="event" x="-0.66666" y="1208" width="298.667" height="70.6667">
+  <object id="108" type="event" x="0.33334" y="1208.33" width="298.667" height="70.6667">
    <properties>
     <property name="safezone" value="true"/>
    </properties>

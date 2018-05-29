@@ -7,6 +7,7 @@ public interface Assets {
     }
 
     interface Textures {
+        String DOG_TILESET = "textures/dog.png";
         String PLAYER_TILESET = "textures/player.png";
         String KALMAG_TILESET = "textures/kalmag.png";
         String BITBRAIN_LOGO = "textures/bitbrain.png";

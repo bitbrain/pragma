@@ -75,6 +75,10 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         SpriteSheet demonSheet = new SpriteSheet(demonTexture, 8, 4);
         CharacterInitializer.createAnimations(context, demonSheet, CharacterType.KALMAG).scale(1, 2f);
 
+        final Texture dogTexture = SharedAssetManager.getInstance().get(Assets.Textures.DOG_TILESET);
+        SpriteSheet dogSheet = new SpriteSheet(dogTexture, 4, 4);
+        CharacterInitializer.createAnimations(context, dogSheet, CharacterType.DOG).scale(1, 2f);
+
         Vignette vignette = new Vignette(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
         vignette.setLutIntensity(0.7f);
         vignette.setIntensity(0.9f);

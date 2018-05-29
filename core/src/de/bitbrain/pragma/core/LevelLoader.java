@@ -83,6 +83,13 @@ public class LevelLoader {
                         float normalizedY = (float)Math.floor(o.getTop() / api.getCellHeight()) * api.getCellHeight();
                         o.setPosition(normalizedX, normalizedY);
                     }
+                    if (CharacterType.DOG.name().equals(o.getType())) {
+                        o.setDimensions(32, 16f);
+                        TiledMapAPI api = context.getTiledMapManager().getAPI();
+                        float normalizedX = (float)Math.floor(o.getLeft() / api.getCellWidth()) * api.getCellWidth();
+                        float normalizedY = (float)Math.floor(o.getTop() / api.getCellHeight()) * api.getCellHeight();
+                        o.setPosition(normalizedX, normalizedY);
+                    }
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
                     }
