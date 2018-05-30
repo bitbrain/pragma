@@ -36,8 +36,8 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
         @Override
         public void update(GameObject source, float delta) {
             if (!gameOver && chasingBehavior != null && chasingBehavior.getPath() != null && chasingBehavior.getPath().getLength() <= 3) {
-               // gameOver = true;
-               // context.getEventManager().publish(new GameOverEvent());
+               gameOver = true;
+               context.getEventManager().publish(new GameOverEvent());
             }
         }
     };
