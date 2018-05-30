@@ -31,6 +31,7 @@ import de.bitbrain.braingdx.tmx.TiledMapType;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Config;
+import de.bitbrain.pragma.ai.ChasingBehavior;
 import de.bitbrain.pragma.events.EndgameEvent;
 import de.bitbrain.pragma.events.EscapeSuccessfulEvent;
 import de.bitbrain.pragma.events.GameOverEvent;
@@ -47,7 +48,8 @@ public class LevelLoader {
 
     private final BrainGdxGame game;
 
-    private GameObject player;
+    private GameObject player, dog;
+    private ChasingBehavior dogChasingBehavior;
 
     private GameObject safeZone;
 
@@ -84,6 +86,7 @@ public class LevelLoader {
                         o.setPosition(normalizedX, normalizedY);
                     }
                     if (CharacterType.DOG.name().equals(o.getType())) {
+                        dog = o;
                         o.setDimensions(32, 16f);
                         TiledMapAPI api = context.getTiledMapManager().getAPI();
                         float normalizedX = (float)Math.floor(o.getLeft() / api.getCellWidth()) * api.getCellWidth();
@@ -157,6 +160,14 @@ public class LevelLoader {
                 context.getGameCamera().setSpeed(0.7f);
                 context.getGameCamera().setStickToWorldBounds(true);
 
+                // Setup dog movement
+                if (dog != null) {
+                    dogChasingBehavior = new ChasingBehavior(dog, player, context.getTiledMapManager());
+                    context.getBehaviorManager().apply(dogChasingBehavior);
+                    dogChasingBehavior.setMinLength(4);
+                    dogChasingBehavior.getMovement().interval(0.35f);
+                }
+
                 // Setup player movement
                 OrientationMovementController controller = new OrientationMovementController();
                 final RasteredMovementBehavior behavior = new RasteredMovementBehavior(controller, context.getTiledMapManager().getAPI())
@@ -218,6 +229,38 @@ public class LevelLoader {
                                 batch.begin();
                                 for (int i = 0; i < path.getLength(); ++i) {
                                     Color color = Color.valueOf("00ffff");
+                                    color.a = 1f - MathUtils.clamp(5f / (i + 1f), 0.1f, 0.9f);
+                                    batch.setColor(color);
+                                    batch.draw(texture,
+                                            path.getX(i) * context.getTiledMapManager().getAPI().getCellWidth(),
+                                            path.getY(i) * context.getTiledMapManager().getAPI().getCellHeight(),
+                                            context.getTiledMapManager().getAPI().getCellWidth(),
+                                            context.getTiledMapManager().getAPI().getCellHeight());
+                                }
+                                batch.setColor(Color.WHITE);
+                                batch.end();
+                            }
+                        }
+                    });
+                    context.getRenderPipeline().putAfter(RenderPipeIds.PARTICLES, "dog-path", new RenderLayer() {
+
+                        private Texture texture = GraphicsFactory.createTexture(2, 2, Color.WHITE);
+
+                        @Override
+                        public void beforeRender() {
+
+                        }
+
+                        @Override
+                        public void render(Batch batch, float delta) {
+                            if (dogChasingBehavior == null) {
+                                return;
+                            }
+                            Path path = dogChasingBehavior.getPath();
+                            if (path != null) {
+                                batch.begin();
+                                for (int i = 0; i < path.getLength(); ++i) {
+                                    Color color = Color.valueOf("fff00f");
                                     color.a = 1f - MathUtils.clamp(5f / (i + 1f), 0.1f, 0.9f);
                                     batch.setColor(color);
                                     batch.draw(texture,

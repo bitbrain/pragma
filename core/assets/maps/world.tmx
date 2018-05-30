@@ -34,7 +34,7 @@
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="49" name="SPAWN" type="JOHN" x="83.1237" y="1256.1">
+  <object id="49" name="SPAWN" type="JOHN" x="184.957" y="1193.93">
    <properties>
     <property name="collision" type="bool" value="true"/>
    </properties>
@@ -101,7 +101,10 @@
    </properties>
    <point/>
   </object>
-  <object id="150" name="Dog" type="DOG" x="42" y="1257">
+  <object id="150" name="Dog" type="DOG" x="237.333" y="1138.67">
+   <properties>
+    <property name="collision" value="false"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
@@ -211,7 +214,7 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="108" type="event" x="0.33334" y="1208.33" width="298.667" height="70.6667">
+  <object id="108" type="event" x="0.33334" y="1209" width="298.667" height="70.6667">
    <properties>
     <property name="safezone" value="true"/>
    </properties>
