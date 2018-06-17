@@ -32,6 +32,7 @@ import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Config;
 import de.bitbrain.pragma.ai.ChasingBehavior;
+import de.bitbrain.pragma.events.DogRunsAwayEvent;
 import de.bitbrain.pragma.events.EndgameEvent;
 import de.bitbrain.pragma.events.EscapeSuccessfulEvent;
 import de.bitbrain.pragma.events.GameOverEvent;
@@ -48,7 +49,7 @@ public class LevelLoader {
 
     private final BrainGdxGame game;
 
-    private GameObject player, dog;
+    private GameObject player, dog, dogTarget;
     private ChasingBehavior dogChasingBehavior;
 
     private GameObject safeZone;
@@ -88,6 +89,13 @@ public class LevelLoader {
                     if (CharacterType.DOG.name().equals(o.getType())) {
                         dog = o;
                         o.setDimensions(32, 16f);
+                        TiledMapAPI api = context.getTiledMapManager().getAPI();
+                        float normalizedX = (float)Math.floor(o.getLeft() / api.getCellWidth()) * api.getCellWidth();
+                        float normalizedY = (float)Math.floor(o.getTop() / api.getCellHeight()) * api.getCellHeight();
+                        o.setPosition(normalizedX, normalizedY);
+                    }
+                    if ("dog_target".equals(o.getType())) {
+                        dogTarget = o;
                         TiledMapAPI api = context.getTiledMapManager().getAPI();
                         float normalizedX = (float)Math.floor(o.getLeft() / api.getCellWidth()) * api.getCellWidth();
                         float normalizedY = (float)Math.floor(o.getTop() / api.getCellHeight()) * api.getCellHeight();
@@ -167,6 +175,7 @@ public class LevelLoader {
                     dogChasingBehavior.setMinLength(4);
                     dogChasingBehavior.getMovement().interval(0.35f);
                 }
+                context.getEventManager().register(new DogEscapeHandler(dogTarget, dogChasingBehavior, dog, context.getEventManager()), DogRunsAwayEvent.class);
 
                 // Setup player movement
                 OrientationMovementController controller = new OrientationMovementController();

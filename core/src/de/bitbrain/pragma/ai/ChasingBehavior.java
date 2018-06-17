@@ -18,9 +18,15 @@ import de.bitbrain.braingdx.world.GameObject;
 
 public class ChasingBehavior extends BehaviorAdapter {
 
+    public static interface ChasingListener {
+        void onArriveTarget();
+    }
+
     private Path path;
     private final RasteredMovementBehavior behavior;
+    private int previousLength = 0;
     private int minLength = 2;
+    private ChasingListener listener;
 
     private final TiledMapListenerAdapter pathUpdater = new TiledMapListenerAdapter() {
 
@@ -39,8 +45,12 @@ public class ChasingBehavior extends BehaviorAdapter {
         @Override
         public void update(Movement movement, float delta) {
             if (path == null || path.getLength() <= minLength) {
+                if (listener != null && previousLength > path.getLength()) {
+                    listener.onArriveTarget();
+                }
                 return;
             }
+            previousLength = path.getLength();
             if (!movement.isMoving()) {
                 int indexX = IndexCalculator.calculateIndex(source.getLeft(), tiledMapManager.getAPI().getCellWidth());
                 int indexY = IndexCalculator.calculateIndex(source.getTop(), tiledMapManager.getAPI().getCellHeight());
@@ -73,6 +83,10 @@ public class ChasingBehavior extends BehaviorAdapter {
         if (source.equals(this.source)) {
             behavior.update(source, delta);
         }
+    }
+
+    public void setListener(ChasingListener listener) {
+        this.listener = listener;
     }
 
     public void setTarget(GameObject target) {

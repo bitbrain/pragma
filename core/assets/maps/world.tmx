@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="154">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="157">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="80" height="80">
   <data encoding="base64" compression="zlib">
@@ -107,6 +107,12 @@
    </properties>
    <point/>
   </object>
+  <object id="154" type="dog_target" x="619" y="326.167">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <layer name="misc" width="80" height="80">
   <properties>
@@ -117,11 +123,11 @@
   </data>
  </layer>
  <objectgroup name="events">
-  <object id="47" type="event" x="222.417" y="995.663" width="65.5" height="32">
+  <object id="47" type="event" x="202.25" y="1011.16" width="65.5" height="37">
    <properties>
     <property name="collision" type="bool" value="false"/>
+    <property name="dog_runs_away" type="bool" value="true"/>
     <property name="producer" value="JOHN"/>
-    <property name="say" value="Is the driver here somewhere?"/>
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
