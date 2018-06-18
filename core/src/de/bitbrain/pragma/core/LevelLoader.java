@@ -168,15 +168,6 @@ public class LevelLoader {
                 context.getGameCamera().setSpeed(0.7f);
                 context.getGameCamera().setStickToWorldBounds(true);
 
-                // Setup dog movement
-                if (dog != null) {
-                    dogChasingBehavior = new ChasingBehavior(dog, player, context.getTiledMapManager());
-                    context.getBehaviorManager().apply(dogChasingBehavior);
-                    dogChasingBehavior.setMinLength(4);
-                    dogChasingBehavior.getMovement().interval(0.35f);
-                }
-                context.getEventManager().register(new DogEscapeHandler(dogTarget, dogChasingBehavior, dog, context.getEventManager()), DogRunsAwayEvent.class);
-
                 // Setup player movement
                 OrientationMovementController controller = new OrientationMovementController();
                 final RasteredMovementBehavior behavior = new RasteredMovementBehavior(controller, context.getTiledMapManager().getAPI())
@@ -185,6 +176,15 @@ public class LevelLoader {
                 context.getBehaviorManager().apply(behavior, player);
 
                 context.getBehaviorManager().apply(new PointLightBehavior(Color.valueOf("#181818"), 150f, context.getLightingManager()), player);
+
+                // Setup dog movement
+                if (dog != null) {
+                    dogChasingBehavior = new ChasingBehavior(dog, player, context.getTiledMapManager());
+                    context.getBehaviorManager().apply(dogChasingBehavior);
+                    dogChasingBehavior.setMinLength(4);
+                    dogChasingBehavior.getMovement().interval(0.35f);
+                }
+                context.getEventManager().register(new DogEscapeHandler(dogTarget, dogChasingBehavior, behavior, dog, context), DogRunsAwayEvent.class);
 
                 // Stick player to field to avoid collision issues
                 TiledMapAPI api = context.getTiledMapManager().getAPI();

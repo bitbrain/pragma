@@ -2,6 +2,7 @@ package de.bitbrain.pragma.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 
@@ -12,11 +13,13 @@ import aurelienribon.tweenengine.TweenEquation;
 import aurelienribon.tweenengine.TweenEquations;
 import de.bitbrain.braingdx.BrainGdxGame;
 import de.bitbrain.braingdx.GameContext;
+import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.graphics.pipeline.layers.RenderPipeIds;
 import de.bitbrain.braingdx.postprocessing.effects.Bloom;
 import de.bitbrain.braingdx.postprocessing.effects.Vignette;
 import de.bitbrain.braingdx.screens.AbstractScreen;
 import de.bitbrain.braingdx.tweens.ActorTween;
+import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.Colors;
 import de.bitbrain.pragma.Config;
 import de.bitbrain.pragma.ui.Styles;
@@ -30,6 +33,8 @@ public class GameOverScreen extends AbstractScreen<BrainGdxGame> {
     @Override
     protected void onCreate(final GameContext context) {
         setBackgroundColor(Colors.BACKGROUND);
+        SharedAssetManager.getInstance().get(Assets.Musics.SOUNDSCAPE, Music.class).stop();
+        SharedAssetManager.getInstance().get(Assets.Musics.ESCAPE, Music.class).stop();
         Vignette vignette = new Vignette(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
         vignette.setLutIntensity(0.7f);
         vignette.setIntensity(0.9f);

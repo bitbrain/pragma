@@ -45,7 +45,7 @@ public class ChasingBehavior extends BehaviorAdapter {
         @Override
         public void update(Movement movement, float delta) {
             if (path == null || path.getLength() <= minLength) {
-                if (listener != null && previousLength > path.getLength()) {
+                if (listener != null && path != null && previousLength > path.getLength()) {
                     listener.onArriveTarget();
                 }
                 return;
