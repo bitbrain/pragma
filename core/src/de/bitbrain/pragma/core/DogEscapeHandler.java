@@ -27,16 +27,16 @@ public class DogEscapeHandler implements GameEventListener<DogRunsAwayEvent>, Ch
         this.dogChasingBehavior = chasingBehavior;
         this.context = context;
         this.playerMovement = playerMovement;
-        SharedAssetManager.getInstance().get(Assets.Sounds.WHINING, Sound.class).play(0.3f);
+        SharedAssetManager.getInstance().get(Assets.Sounds.WHINING, Sound.class).play(0.5f);
     }
 
     @Override
     public void onEvent(DogRunsAwayEvent event) {
         if (!triggered) {
             dogChasingBehavior.setTarget(dogTarget);
-            dogChasingBehavior.getMovement().interval(0.1f);
+            dogChasingBehavior.getMovement().interval(0.15f);
             context.getEventManager().publish(new SayEvent(dog, "Nooo!! Wait!!\nI have to chase him!!"));
-            context.getAudioManager().spawnSoundLooped(Assets.Sounds.BARK, dog.getLeft(), dog.getTop(), 1f, 0.7f, 600f);
+            context.getAudioManager().spawnSoundLooped(Assets.Sounds.BARK, dog, 1f, 0.7f, 600f);
             dogChasingBehavior.setListener(this);
             playerMovement.interval(0.27f);
             triggered = false;
@@ -47,6 +47,7 @@ public class DogEscapeHandler implements GameEventListener<DogRunsAwayEvent>, Ch
     @Override
     public void onArriveTarget() {
         dog.setActive(false);
+        dog.setPosition(-999,-999);
         dog.getColor().a = 0f;
         dogChasingBehavior.setTarget(null);
         dogChasingBehavior.setListener(null);

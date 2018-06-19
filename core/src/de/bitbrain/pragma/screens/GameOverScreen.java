@@ -34,7 +34,8 @@ public class GameOverScreen extends AbstractScreen<BrainGdxGame> {
     protected void onCreate(final GameContext context) {
         setBackgroundColor(Colors.BACKGROUND);
         SharedAssetManager.getInstance().get(Assets.Musics.SOUNDSCAPE, Music.class).stop();
-        SharedAssetManager.getInstance().get(Assets.Musics.ESCAPE, Music.class).stop();
+        SharedAssetManager.getInstance().get(Assets.Musics.DANGER, Music.class).stop();
+        SharedAssetManager.getInstance().get(Assets.Musics.DANGER_EXTREME, Music.class).stop();
         Vignette vignette = new Vignette(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
         vignette.setLutIntensity(0.7f);
         vignette.setIntensity(0.9f);

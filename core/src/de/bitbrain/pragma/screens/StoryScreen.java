@@ -25,6 +25,16 @@ import de.bitbrain.pragma.ui.Styles;
 
 public class StoryScreen extends AbstractScreen<BrainGdxGame> {
 
+    private String[] STORY = {
+            "John promised his parents to be home early. On his way home he came across a lonely parking lot.",
+            "His grandma told him stories about this place. \nA dark forest, abandoned for many years.",
+            "About fifty years ago a group of young students went camping here.\n\nThey were never seen again.",
+            "As John approached the wooden fence he noticed something odd...",
+            "There was a car!\nEngines still running.",
+            "Curiosity took over and he decided to approach the vehicle...",
+            "This day would change his life forever."
+    };
+
     private Label label, action;
 
     private StoryTeller teller;
@@ -42,7 +52,7 @@ public class StoryScreen extends AbstractScreen<BrainGdxGame> {
 
         setBackgroundColor(Colors.BACKGROUND);
         this.context = context;
-        teller = new StoryTeller();
+        teller = new StoryTeller(STORY);
 
         context.getScreenTransitions().in(2f);
 

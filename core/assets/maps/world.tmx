@@ -34,7 +34,7 @@
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="49" name="SPAWN" type="JOHN" x="184.957" y="1193.93">
+  <object id="49" name="SPAWN" type="JOHN" x="195.29" y="1198.93">
    <properties>
     <property name="collision" type="bool" value="true"/>
    </properties>
@@ -101,13 +101,13 @@
    </properties>
    <point/>
   </object>
-  <object id="150" name="Dog" type="DOG" x="237.333" y="1138.67">
+  <object id="150" name="Dog" type="DOG" x="222.333" y="1200">
    <properties>
     <property name="collision" value="false"/>
    </properties>
    <point/>
   </object>
-  <object id="154" type="dog_target" x="619" y="326.167">
+  <object id="154" type="dog_target" x="775" y="136.834">
    <properties>
     <property name="collision" type="bool" value="true"/>
    </properties>
@@ -123,7 +123,7 @@
   </data>
  </layer>
  <objectgroup name="events">
-  <object id="47" type="event" x="202.25" y="1011.16" width="65.5" height="37">
+  <object id="47" type="event" x="309.583" y="849.493" width="342.167" height="84.3333">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="dog_runs_away" type="bool" value="true"/>
