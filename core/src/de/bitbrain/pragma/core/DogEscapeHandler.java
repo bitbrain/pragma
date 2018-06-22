@@ -36,7 +36,7 @@ public class DogEscapeHandler implements GameEventListener<DogRunsAwayEvent>, Ch
             dogChasingBehavior.setTarget(dogTarget);
             dogChasingBehavior.getMovement().interval(0.15f);
             context.getEventManager().publish(new SayEvent(dog, "Nooo!! Wait!!\nI have to chase him!!"));
-            context.getAudioManager().spawnSoundLooped(Assets.Sounds.BARK, dog, 1f, 0.7f, 600f);
+            context.getAudioManager().spawnSoundLooped(Assets.Sounds.BARK, dog, 1f, 0.7f, 350f);
             dogChasingBehavior.setListener(this);
             playerMovement.interval(0.27f);
             triggered = false;
