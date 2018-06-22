@@ -30,13 +30,10 @@ import de.bitbrain.pragma.ui.Styles;
 public class EscapeSuccessfulScreen extends AbstractScreen<BrainGdxGame> {
 
     private String[] STORY = {
-        "John promised his parents to be home early. On his way home he came across a lonely parking lot.",
-        "His grandma told him stories about this place. \nA dark forest, abandoned for many years.",
-        "About fifty years ago a group of young students went camping here.\n\nThey were never seen again.",
-        "As John approached the wooden fence he noticed something odd...",
-        "There was a car!\nEngines still running.",
-        "Curiosity took over and he decided to approach the vehicle...",
-        "This day would change his life forever."
+        "John didn't look back. He kept running.",
+        "With tears in his eyes he arrived back home when suddenly...",
+        "MERLIN! The dog sat in front of the door, healthy and full of mud!",
+        "In the distance a strange sound.\n\nIt came closer. Much closer."
     };
 
     private Label label, action;
