@@ -39,6 +39,7 @@ public class MenuScreen extends AbstractScreen<BrainGdxGame> {
     protected void onCreate(GameContext context) {
         setBackgroundColor(Colors.BACKGROUND);
 
+        context.getAudioManager().stopMusic(Assets.Musics.STORY_MENU);
         context.getAudioManager().fadeInMusic(Assets.Musics.MAIN_MENU, 7f);
         this.context = context;
         context.getScreenTransitions().in(1.5f);
