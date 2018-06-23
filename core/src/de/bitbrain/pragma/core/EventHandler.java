@@ -12,6 +12,8 @@ import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.event.GameEventManager;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.braingdx.world.GameWorld;
+import de.bitbrain.pragma.events.EscapeSuccessfulEvent;
+import de.bitbrain.pragma.screens.EscapeSuccessfulScreen;
 
 public class EventHandler implements Behavior {
 

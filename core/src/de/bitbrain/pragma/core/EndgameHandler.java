@@ -19,6 +19,7 @@ import de.bitbrain.braingdx.tweens.GameObjectTween;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.ai.ChasingBehavior;
+import de.bitbrain.pragma.audio.SoundRandomizer;
 import de.bitbrain.pragma.events.EndgameEvent;
 import de.bitbrain.pragma.events.GameOverEvent;
 import de.bitbrain.pragma.events.SayEvent;
@@ -40,7 +41,7 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
             if (!gameOver && chasingBehavior != null && chasingBehavior.getPath() != null && chasingBehavior.getPath().getLength() <= 3) {
                gameOver = true;
                context.getEventManager().publish(new GameOverEvent());
-                SharedAssetManager.getInstance().get(Assets.Sounds.CREATE_2, Sound.class).play();
+               SharedAssetManager.getInstance().get(Assets.Sounds.CREATE_2, Sound.class).play();
             }
         }
     };
@@ -91,6 +92,14 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
                                 chasingBehavior.setMinLength(2);
                                 context.getBehaviorManager().apply(chasingBehavior);
                                 movementBehavior.interval(0.2f);
+                                context.getBehaviorManager().apply(new SoundRandomizer(
+                                        context,
+                                        10,
+                                        20,
+                                        400,
+                                        Assets.Sounds.CREATURE,
+                                        Assets.Sounds.CREATE_2
+                                ), devil);
                             }
                         })//
                         .setCallbackTriggers(TweenCallback.COMPLETE)//
