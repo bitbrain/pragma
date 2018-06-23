@@ -34,7 +34,7 @@
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="49" name="SPAWN" type="JOHN" x="981.957" y="1165.26">
+  <object id="49" name="SPAWN" type="JOHN" x="189.29" y="1171.93">
    <properties>
     <property name="collision" type="bool" value="true"/>
    </properties>
