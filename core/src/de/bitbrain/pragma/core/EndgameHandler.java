@@ -100,6 +100,13 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
                                         Assets.Sounds.CREATURE,
                                         Assets.Sounds.CREATE_2
                                 ), devil);
+                                context.getBehaviorManager().apply(new SoundRandomizer(
+                                        context,
+                                        1f,
+                                        1f,
+                                        400,
+                                        Assets.Sounds.CREATURE_STEP
+                                ), devil);
                             }
                         })//
                         .setCallbackTriggers(TweenCallback.COMPLETE)//

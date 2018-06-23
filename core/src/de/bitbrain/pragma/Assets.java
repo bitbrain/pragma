@@ -26,6 +26,7 @@ public interface Assets {
         String CREATURE = "sounds/creature.ogg";
         String CREATE_2 = "sounds/creature_2.ogg";
         String FOOTSTEP = "sounds/step.ogg";
+        String CREATURE_STEP = "sounds/step_1.ogg";
         String BARK = "sounds/bark.ogg";
         String WHINING = "sounds/whining.ogg";
         String BUTTON = "sounds/button.ogg";
