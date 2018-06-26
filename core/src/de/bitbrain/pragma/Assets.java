@@ -24,12 +24,22 @@ public interface Assets {
         String BITBRAIN = "sounds/bitbrain.ogg";
         String ENGINE_RUNNING = "sounds/engine-running.ogg";
         String CREATURE = "sounds/creature.ogg";
+        String CREATE_2 = "sounds/creature_2.ogg";
         String FOOTSTEP = "sounds/step.ogg";
+        String CREATURE_STEP = "sounds/step_1.ogg";
+        String BARK = "sounds/bark.ogg";
+        String WHINING = "sounds/whining.ogg";
+        String BUTTON = "sounds/button.ogg";
     }
 
     interface Musics {
         String SOUNDSCAPE = "music/soundscape.ogg";
         String ESCAPE = "music/escape.ogg";
+        String STORY_MENU = "music/storyscreen.ogg";
+        String MAIN_MENU = "music/mainmenu.ogg";
+        String DANGER = "music/danger.ogg";
+        String DANGER_EXTREME = "music/great_danger.ogg";
+
     }
 
     interface Particles {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="154">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="16" tileheight="16" infinite="0" nextobjectid="158">
  <tileset firstgid="1" source="forest.tsx"/>
  <layer name="ground" width="80" height="80">
   <data encoding="base64" compression="zlib">
@@ -30,11 +30,11 @@
  </layer>
  <layer name="base3" width="80" height="80">
   <data encoding="base64" compression="zlib">
-   eJzt0MsNglAARNHHAhW1AQXBBvyB/dfGdGDCAlyck9z9ZEoBAAAAAAAAAAAAAAAAAAAAAAAAAABgTXVVyi7t0yE16ZhO6Vxtve7/XfLRNbWpS7fUpyHd/ffTIx890yu90yeNaUpf/wEAwCIzrccCxQ==
+   eJzt0MsNglAARNHHQlCxAX9oA/6Q7mie6cDEBbA4J7n7yZQCAMAajEsPAAAAAAAAAAAAAAAAAAAAAAAAAGazqUqpU5O2aZf2qU2Haul163fMR6d0Tpd0TV26pbv/fnrko2d6pXf6pD590+A/AAD4ywQgUwNA
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="49" name="SPAWN" type="JOHN" x="184.957" y="1193.93">
+  <object id="49" name="SPAWN" type="JOHN" x="189.29" y="1171.93">
    <properties>
     <property name="collision" type="bool" value="true"/>
    </properties>
@@ -101,9 +101,15 @@
    </properties>
    <point/>
   </object>
-  <object id="150" name="Dog" type="DOG" x="237.333" y="1138.67">
+  <object id="150" name="Dog" type="DOG" x="221.833" y="1173">
    <properties>
     <property name="collision" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="154" type="dog_target" x="775" y="136.834">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
    </properties>
    <point/>
   </object>
@@ -117,11 +123,11 @@
   </data>
  </layer>
  <objectgroup name="events">
-  <object id="47" type="event" x="222.417" y="995.663" width="65.5" height="32">
+  <object id="47" type="event" x="309.583" y="849.493" width="342.167" height="84.3333">
    <properties>
     <property name="collision" type="bool" value="false"/>
+    <property name="dog_runs_away" type="bool" value="true"/>
     <property name="producer" value="JOHN"/>
-    <property name="say" value="Is the driver here somewhere?"/>
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
@@ -157,19 +163,11 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="82" type="event" x="227.25" y="84.8335" width="215.5" height="65.333">
+  <object id="83" type="event" x="849.583" y="56.0002" width="37.1667" height="116.666">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
-    <property name="say" value="This red mud is everywhere..."/>
-    <property name="sticky" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="83" type="event" x="862.25" y="-8.6665" width="42.5" height="151.333">
-   <properties>
-    <property name="collision" type="bool" value="false"/>
-    <property name="producer" value="JOHN"/>
-    <property name="say" value="The driver of the car might be here somewhere..."/>
+    <property name="say" value="Merlins collar!! He must be here somewhere..."/>
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
@@ -216,6 +214,7 @@
   </object>
   <object id="108" type="event" x="0.33334" y="1209" width="298.667" height="70.6667">
    <properties>
+    <property name="producer" value="JOHN"/>
     <property name="safezone" value="true"/>
    </properties>
   </object>
@@ -361,7 +360,7 @@
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
-    <property name="say" value="This is a maze. I hope I find the way back."/>
+    <property name="say" value="This is a maze! I hope I'll find back home but where is my little dog?"/>
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
@@ -377,7 +376,7 @@
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>
-    <property name="say" value="Where am I?"/>
+    <property name="say" value="Merlin?"/>
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>

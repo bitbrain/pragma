@@ -15,7 +15,7 @@ import de.bitbrain.braingdx.tweens.VectorTween;
 
 public class ScreenShake {
 
-    // Interval in miliseconds between each movement
+    // Interval in milliseconds between each movement
     public static final float STEP_INTERVAL = 0.05f;
 
     private static Vector2 shake = new Vector2();
@@ -37,7 +37,7 @@ public class ScreenShake {
     }
 
     // strength is the maximum radius
-    // duration is the time in miliseconds
+    // duration is the time in milliseconds
     public static void shake(float strength, final float duration) {
         // Calculate the number of steps to take until radius is 0
         final int STEPS = Math.round(duration / STEP_INTERVAL);

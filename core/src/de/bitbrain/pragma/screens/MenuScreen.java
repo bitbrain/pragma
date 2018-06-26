@@ -38,6 +38,9 @@ public class MenuScreen extends AbstractScreen<BrainGdxGame> {
     @Override
     protected void onCreate(GameContext context) {
         setBackgroundColor(Colors.BACKGROUND);
+
+        context.getAudioManager().stopMusic(Assets.Musics.STORY_MENU);
+        context.getAudioManager().fadeInMusic(Assets.Musics.MAIN_MENU, 7f);
         this.context = context;
         context.getScreenTransitions().in(1.5f);
 
@@ -95,6 +98,7 @@ public class MenuScreen extends AbstractScreen<BrainGdxGame> {
     protected void onUpdate(float delta) {
         if (!exiting && (Gdx.input.isTouched() || Gdx.input.isKeyJustPressed(Input.Keys.ANY_KEY))) {
             exiting = true;
+            SharedAssetManager.getInstance().get(Assets.Sounds.BUTTON, Sound.class).play();
             context.getScreenTransitions().out(new StoryScreen(getGame()), 1f);
         }
     }

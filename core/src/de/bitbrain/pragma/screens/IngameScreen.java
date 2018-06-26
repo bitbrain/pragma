@@ -79,12 +79,8 @@ public class IngameScreen extends AbstractScreen<BrainGdxGame> {
         context.getEventManager().register(new SpeechHandler(context.getStage()), SayEvent.class);
         loader.load(Assets.TiledMaps.INTRO);
 
-        // Creepy stuff
-        Music soundscape = SharedAssetManager.getInstance().get(Assets.Musics.SOUNDSCAPE, Music.class);
-        soundscape.setLooping(true);
-        soundscape.setVolume(0.15f);
-        soundscape.play();
-
+        context.getAudioManager().fadeOutMusic(Assets.Musics.STORY_MENU, 3f);
+        context.getAudioManager().fadeOutMusic(Assets.Musics.MAIN_MENU, 3f);
         cameraController = new CameraController(context.getGameCamera());
 
         context.getRenderManager().register("page", new SpriteRenderer(Assets.Textures.PAGE));

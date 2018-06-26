@@ -4,6 +4,7 @@ import com.badlogic.gdx.maps.MapProperties;
 
 import de.bitbrain.braingdx.event.GameEvent;
 import de.bitbrain.braingdx.world.GameObject;
+import de.bitbrain.pragma.events.DogRunsAwayEvent;
 import de.bitbrain.pragma.events.EndgameEvent;
 import de.bitbrain.pragma.events.EscapeSuccessfulEvent;
 import de.bitbrain.pragma.events.SayEvent;
@@ -28,6 +29,9 @@ class EventFactory {
         }
         if (mapProperties.containsKey("safezone")) {
             return new EscapeSuccessfulEvent();
+        }
+        if (mapProperties.containsKey("dog_runs_away")) {
+            return new DogRunsAwayEvent();
         }
         return null;
     }

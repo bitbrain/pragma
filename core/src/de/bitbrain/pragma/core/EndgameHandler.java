@@ -1,5 +1,6 @@
 package de.bitbrain.pragma.core;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 
 import aurelienribon.tweenengine.BaseTween;
@@ -8,6 +9,7 @@ import aurelienribon.tweenengine.TweenCallback;
 import aurelienribon.tweenengine.TweenEquations;
 import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.ai.pathfinding.Path;
+import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.behavior.Behavior;
 import de.bitbrain.braingdx.behavior.BehaviorAdapter;
 import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
@@ -17,6 +19,7 @@ import de.bitbrain.braingdx.tweens.GameObjectTween;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.ai.ChasingBehavior;
+import de.bitbrain.pragma.audio.SoundRandomizer;
 import de.bitbrain.pragma.events.EndgameEvent;
 import de.bitbrain.pragma.events.GameOverEvent;
 import de.bitbrain.pragma.events.SayEvent;
@@ -38,6 +41,7 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
             if (!gameOver && chasingBehavior != null && chasingBehavior.getPath() != null && chasingBehavior.getPath().getLength() <= 3) {
                gameOver = true;
                context.getEventManager().publish(new GameOverEvent());
+               SharedAssetManager.getInstance().get(Assets.Sounds.CREATE_2, Sound.class).play();
             }
         }
     };
@@ -68,6 +72,12 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
                 context.getEventManager().publish(new SayEvent(player, "WH...WHAT IS HAPPENING?!"));
                 movementBehavior.interval(2f);
                 safezone.setActive(true);
+                Tween.call(new TweenCallback() {
+                    @Override
+                    public void onEvent(int i, BaseTween<?> baseTween) {
+                        context.getAudioManager().crossFadeMusic(Assets.Musics.ESCAPE, Assets.Musics.DANGER, 10f);
+                    }
+                }).delay(50f).start(context.getTweenManager());
                 Tween.to(o, GameObjectTween.ALPHA, 0.1f).delay(4f).target(1f)//
                         .setCallback(new TweenCallback() {
                             @Override
@@ -82,6 +92,21 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
                                 chasingBehavior.setMinLength(2);
                                 context.getBehaviorManager().apply(chasingBehavior);
                                 movementBehavior.interval(0.2f);
+                                context.getBehaviorManager().apply(new SoundRandomizer(
+                                        context,
+                                        10,
+                                        20,
+                                        400,
+                                        Assets.Sounds.CREATURE,
+                                        Assets.Sounds.CREATE_2
+                                ), devil);
+                                context.getBehaviorManager().apply(new SoundRandomizer(
+                                        context,
+                                        1f,
+                                        1f,
+                                        400,
+                                        Assets.Sounds.CREATURE_STEP
+                                ), devil);
                             }
                         })//
                         .setCallbackTriggers(TweenCallback.COMPLETE)//
