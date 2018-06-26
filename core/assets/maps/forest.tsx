@@ -344,32 +344,32 @@
  </tile>
  <tile id="68">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="69">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="70">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="71">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="72">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="73">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="74">
@@ -1749,22 +1749,22 @@
  </tile>
  <tile id="349">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="350">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="351">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="352">
   <properties>
-   <property name="collision" value="true"/>
+   <property name="collision" value="false"/>
   </properties>
  </tile>
  <tile id="353">

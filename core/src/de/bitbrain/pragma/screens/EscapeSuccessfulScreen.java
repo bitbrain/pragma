@@ -66,7 +66,7 @@ public class EscapeSuccessfulScreen extends AbstractScreen<BrainGdxGame> {
         label = new Label(teller.getNextStoryPoint(), Styles.DIALOG_TEXT);
         label.setWrap(true);
         label.setAlignment(Align.center);
-        layout.center().add(label).width(600f).padBottom(200f).row();
+        layout.center().add(label).width(Gdx.graphics.getWidth() / 2f).padBottom(200f).row();
         action = new Label("Press any KEY to continue", Styles.DIALOG_TEXT);
         action.setColor(Color.WHITE);
         action.getColor().a = 0.5f;

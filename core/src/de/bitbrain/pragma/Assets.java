@@ -30,6 +30,8 @@ public interface Assets {
         String BARK = "sounds/bark.ogg";
         String WHINING = "sounds/whining.ogg";
         String BUTTON = "sounds/button.ogg";
+        String PAPER_OPEN = "sounds/paper_open_1.ogg";
+        String PAPER_CLOSE = "sounds/paper_close.ogg";
     }
 
     interface Musics {
