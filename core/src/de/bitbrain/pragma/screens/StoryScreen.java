@@ -26,7 +26,7 @@ import de.bitbrain.pragma.ui.Styles;
 public class StoryScreen extends AbstractScreen<BrainGdxGame> {
 
     private String[] STORY = {
-            "John walked his Dog Merlin and decided to go a different route this time.\nSuddently he came across a lonely parking lot.",
+            "John walked his Dog Merlin and decided to go a different route this time.\nSuddenly he came across a lonely parking lot.",
             "His grandma told him stories about this place. \nA dark forest, abandoned for many years.",
             "About fifty years ago a group of young students went camping here.\n\nThey were never seen again.",
             "As John approached the wooden fence he noticed something odd...",
