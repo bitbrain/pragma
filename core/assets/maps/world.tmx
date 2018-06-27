@@ -123,7 +123,7 @@
   </data>
  </layer>
  <objectgroup name="events">
-  <object id="47" type="event" x="280.583" y="858.993" width="582.167" height="84.3333">
+  <object id="47" type="event" x="320.583" y="795.993" width="333.167" height="83.3333">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="dog_runs_away" type="bool" value="true"/>
@@ -544,7 +544,7 @@
  </layer>
  <layer name="overlay3" width="80" height="80">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="overlay4" width="80" height="80">
