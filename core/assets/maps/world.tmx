@@ -107,9 +107,9 @@
    </properties>
    <point/>
   </object>
-  <object id="154" type="dog_target" x="872.333" y="123.167">
+  <object id="154" type="dog_target" x="432.97" y="103.258">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
@@ -123,7 +123,7 @@
   </data>
  </layer>
  <objectgroup name="events">
-  <object id="47" type="event" x="195.083" y="897.993" width="582.167" height="84.3333">
+  <object id="47" type="event" x="280.583" y="858.993" width="582.167" height="84.3333">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="dog_runs_away" type="bool" value="true"/>
@@ -163,7 +163,7 @@
     <property name="sticky" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="83" type="event" x="849.583" y="56.0002" width="37.1667" height="116.666">
+  <object id="83" type="event" x="838.128" y="50.5457" width="37.1667" height="116.666">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="producer" value="JOHN"/>

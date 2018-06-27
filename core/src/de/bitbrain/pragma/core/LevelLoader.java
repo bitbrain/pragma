@@ -100,6 +100,7 @@ public class LevelLoader {
                         float normalizedX = (float)Math.floor(o.getLeft() / api.getCellWidth()) * api.getCellWidth();
                         float normalizedY = (float)Math.floor(o.getTop() / api.getCellHeight()) * api.getCellHeight();
                         o.setPosition(normalizedX, normalizedY);
+                        o.setActive(false);
                     }
                     if ("tree_light".equals(o.getType())) {
                         context.getLightingManager().addPointLight(UUID.randomUUID().toString(), new Vector2(o.getLeft(), o.getTop()), 200f, o.getColor());
