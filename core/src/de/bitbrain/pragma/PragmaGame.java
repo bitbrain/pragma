@@ -1,5 +1,6 @@
 package de.bitbrain.pragma;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 
 import de.bitbrain.braingdx.BrainGdxGame;
@@ -25,6 +26,8 @@ public class PragmaGame extends BrainGdxGame {
         if (!Config.DEBUG) {
             Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
             return new IntroScreen(this);
+        } else {
+            Gdx.app.setLogLevel(Application.LOG_DEBUG);
         }
         return new IngameScreen(this);
     }

@@ -1,11 +1,15 @@
 package de.bitbrain.pragma.core;
 
+import aurelienribon.tweenengine.BaseTween;
+import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenCallback;
 import com.badlogic.gdx.audio.Sound;
 
 import de.bitbrain.braingdx.GameContext;
 import de.bitbrain.braingdx.assets.SharedAssetManager;
 import de.bitbrain.braingdx.behavior.movement.RasteredMovementBehavior;
 import de.bitbrain.braingdx.event.GameEventListener;
+import de.bitbrain.braingdx.tweens.SharedTweenManager;
 import de.bitbrain.braingdx.world.GameObject;
 import de.bitbrain.pragma.Assets;
 import de.bitbrain.pragma.ai.ChasingBehavior;
@@ -36,7 +40,13 @@ public class DogEscapeHandler implements GameEventListener<DogRunsAwayEvent>, Ch
             dogChasingBehavior.setTarget(dogTarget);
             dogChasingBehavior.getMovement().interval(0.15f);
             context.getEventManager().publish(new SayEvent(dog, "MERLIN!! Wait!!\nI need to chase him!!"));
-            context.getAudioManager().spawnSoundLooped(Assets.Sounds.BARK, dog, 1f, 0.7f, 350f);
+            SharedAssetManager.getInstance().get(Assets.Sounds.SHOCK, Sound.class).play();
+            Tween.call(new TweenCallback() {
+                @Override
+                public void onEvent(int type, BaseTween<?> source) {
+                    context.getAudioManager().spawnSoundLooped(Assets.Sounds.BARK, dog, 1f, 0.7f, 250f);
+                }
+            }).delay(1f).start(SharedTweenManager.getInstance());
             dogChasingBehavior.setListener(this);
             playerMovement.interval(0.27f);
             triggered = false;

@@ -68,7 +68,7 @@ public class ChasingBehavior extends BehaviorAdapter {
                     movement.move(Orientation.DOWN);
                 }
                 if (deltaX != 0 || deltaY != 0) {
-                    getPath().remove(getPath().getLength() - 2);
+                    getPath().remove(getPath().getLength() - 1);
                 }
             }
         }

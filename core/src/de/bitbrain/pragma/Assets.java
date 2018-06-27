@@ -32,6 +32,7 @@ public interface Assets {
         String BUTTON = "sounds/button.ogg";
         String PAPER_OPEN = "sounds/paper_open_1.ogg";
         String PAPER_CLOSE = "sounds/paper_close.ogg";
+        String SHOCK = "sounds/shock.ogg";
     }
 
     interface Musics {

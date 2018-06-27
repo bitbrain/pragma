@@ -79,7 +79,7 @@ public class LevelLoader {
                         player = o;
                     }
                     if (CharacterType.KALMAG.name().equals(o.getType())) {
-                        o.setDimensions(64, 32);
+                        o.setDimensions(32f, 16f);
                         o.getColor().a = 0f;
                         TiledMapAPI api = context.getTiledMapManager().getAPI();
                         float normalizedX = (float)Math.floor(o.getLeft() / api.getCellWidth()) * api.getCellWidth();
@@ -88,7 +88,7 @@ public class LevelLoader {
                     }
                     if (CharacterType.DOG.name().equals(o.getType())) {
                         dog = o;
-                        o.setDimensions(32, 16f);
+                        o.setDimensions(16f, 16f);
                         TiledMapAPI api = context.getTiledMapManager().getAPI();
                         float normalizedX = (float)Math.floor(o.getLeft() / api.getCellWidth()) * api.getCellWidth();
                         float normalizedY = (float)Math.floor(o.getTop() / api.getCellHeight()) * api.getCellHeight();
