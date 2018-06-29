@@ -25,8 +25,9 @@ public class ChasingBehavior extends BehaviorAdapter {
     private Path path;
     private final RasteredMovementBehavior behavior;
     private int previousLength = 0;
-    private int minLength = 2;
+    private int minLength = 0;
     private ChasingListener listener;
+    private boolean targetArrived = false;
 
     private final TiledMapListenerAdapter pathUpdater = new TiledMapListenerAdapter() {
 
@@ -35,7 +36,29 @@ public class ChasingBehavior extends BehaviorAdapter {
             if (target != null) {
                 int sourceX = IndexCalculator.calculateIndex(source.getLeft(), tiledMapManager.getAPI().getCellWidth());
                 int sourceY = IndexCalculator.calculateIndex(source.getTop(), tiledMapManager.getAPI().getCellHeight());
-                path = tiledMapManager.getPathFinder().findPath(target, sourceX, sourceY);
+
+                int targetX = IndexCalculator.calculateIndex(target.getLeft(), tiledMapManager.getAPI().getCellWidth());
+                int targetY = IndexCalculator.calculateIndex(target.getTop(), tiledMapManager.getAPI().getCellHeight());
+
+                // Finding the direct path
+                path = tiledMapManager.getPathFinder().findPath(source, targetX, targetY);
+
+                if (sourceX == targetX && sourceY == targetY) {
+                    // We do not recalculate when we are on the target
+                    return;
+                }
+
+                // Direct path not available, finding nearby path
+                if (path == null) {
+                    for (int x = targetX - 1; x <= targetX + 1; x += 1) {
+                        for (int y = targetY - 1; y <= targetY + 1; y += 1) {
+                            path = tiledMapManager.getPathFinder().findPath(source, x, y);
+                            if (path != null) {
+                                return;
+                            }
+                        }
+                    }
+                }
             }
         }
     };
@@ -44,18 +67,21 @@ public class ChasingBehavior extends BehaviorAdapter {
     private final MovementController<Orientation> chasingController = new MovementController<Orientation>() {
         @Override
         public void update(Movement movement, float delta) {
-            if (path == null || path.getLength() <= minLength) {
-                if (listener != null && path != null && previousLength > path.getLength()) {
+            if (path == null || (path.getLength() - 1) <= minLength) {
+                if (!targetArrived && listener != null && (path == null || previousLength > path.getLength())) {
                     listener.onArriveTarget();
+                    targetArrived = true;
                 }
                 return;
+            } else {
+                targetArrived = false;
             }
             previousLength = path.getLength();
             if (!movement.isMoving()) {
                 int indexX = IndexCalculator.calculateIndex(source.getLeft(), tiledMapManager.getAPI().getCellWidth());
                 int indexY = IndexCalculator.calculateIndex(source.getTop(), tiledMapManager.getAPI().getCellHeight());
-                int pathX = getPath().getX(getPath().getLength() - 2);
-                int pathY = getPath().getY(getPath().getLength() - 2);
+                int pathX = getPath().getX(1);
+                int pathY = getPath().getY(1);
                 float deltaX = pathX - indexX;
                 float deltaY = pathY - indexY;
                 if (deltaX > 0) {
@@ -68,7 +94,7 @@ public class ChasingBehavior extends BehaviorAdapter {
                     movement.move(Orientation.DOWN);
                 }
                 if (deltaX != 0 || deltaY != 0) {
-                    getPath().remove(getPath().getLength() - 1);
+                    getPath().remove(1);
                 }
             }
         }

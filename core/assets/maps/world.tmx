@@ -34,7 +34,7 @@
   </data>
  </layer>
  <objectgroup name="spawn">
-  <object id="49" name="SPAWN" type="JOHN" x="201.472" y="1172.66">
+  <object id="49" name="SPAWN" type="JOHN" x="239.972" y="1195.49">
    <properties>
     <property name="collision" type="bool" value="true"/>
    </properties>
@@ -42,7 +42,7 @@
   </object>
   <object id="95" name="KALMAG" type="KALMAG" x="1227.15" y="1207.61" width="14.5" height="14.5">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </object>
   <object id="106" name="Page 1" type="page" x="567.833" y="1178.83">
@@ -103,11 +103,11 @@
   </object>
   <object id="150" name="Dog" type="DOG" x="202.197" y="1195.73">
    <properties>
-    <property name="collision" value="false"/>
+    <property name="collision" value="true"/>
    </properties>
    <point/>
   </object>
-  <object id="154" type="dog_target" x="432.97" y="103.258">
+  <object id="154" type="dog_target" x="871.925" y="122.213">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
@@ -123,7 +123,7 @@
   </data>
  </layer>
  <objectgroup name="events">
-  <object id="47" type="event" x="320.583" y="795.993" width="333.167" height="83.3333">
+  <object id="47" type="event" x="271.583" y="855.993" width="333.167" height="83.3333">
    <properties>
     <property name="collision" type="bool" value="false"/>
     <property name="dog_runs_away" type="bool" value="true"/>

@@ -38,13 +38,14 @@ public class DogEscapeHandler implements GameEventListener<DogRunsAwayEvent>, Ch
     public void onEvent(DogRunsAwayEvent event) {
         if (!triggered) {
             dogChasingBehavior.setTarget(dogTarget);
+            dogChasingBehavior.setMinLength(0);
             dogChasingBehavior.getMovement().interval(0.15f);
             context.getEventManager().publish(new SayEvent(dog, "MERLIN!! Wait!!\nI need to chase him!!"));
             SharedAssetManager.getInstance().get(Assets.Sounds.SHOCK, Sound.class).play();
             Tween.call(new TweenCallback() {
                 @Override
                 public void onEvent(int type, BaseTween<?> source) {
-                    context.getAudioManager().spawnSoundLooped(Assets.Sounds.BARK, dog, 1f, 0.7f, 250f);
+                    context.getAudioManager().spawnSoundLooped(Assets.Sounds.BARK, dog, 1f, 0.7f, 400f);
                 }
             }).delay(1f).start(SharedTweenManager.getInstance());
             dogChasingBehavior.setListener(this);

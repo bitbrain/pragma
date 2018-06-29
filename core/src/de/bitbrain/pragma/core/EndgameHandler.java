@@ -90,7 +90,7 @@ public class EndgameHandler implements GameEventListener<EndgameEvent> {
                                 ScreenShake.shake(5f, 2f);
                                 chasingBehavior = new ChasingBehavior(devil, player, context.getTiledMapManager());
                                 chasingBehavior.getMovement().ease(TweenEquations.easeOutCubic);
-                                chasingBehavior.setMinLength(2);
+                                chasingBehavior.setMinLength(1);
                                 context.getBehaviorManager().apply(chasingBehavior);
                                 movementBehavior.interval(0.2f);
                                 context.getBehaviorManager().apply(new SoundRandomizer(

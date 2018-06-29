@@ -182,7 +182,7 @@ public class LevelLoader {
                 if (dog != null) {
                     dogChasingBehavior = new ChasingBehavior(dog, player, context.getTiledMapManager());
                     context.getBehaviorManager().apply(dogChasingBehavior);
-                    dogChasingBehavior.setMinLength(4);
+                    dogChasingBehavior.setMinLength(3);
                     dogChasingBehavior.getMovement().interval(0.35f);
                 }
                 context.getEventManager().register(new DogEscapeHandler(dogTarget, dogChasingBehavior, behavior, dog, context), DogRunsAwayEvent.class);
